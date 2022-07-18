@@ -1,0 +1,408 @@
+.tieptucMS{
+    background-color: var(--background-button);
+    color: var(--color-white);
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 10px 15px;
+    font-size: 15px;
+}
+
+.tieptucMS:hover{
+    color: var(--color-white);
+    text-decoration: none;
+    background-color: var(--background-button-hover);
+}
+
+/* tbale  */
+
+
+
+.tblone th {
+    background: var(--background-header);
+    color: #fff;
+    font-size: 20px;
+    padding: 5px 8px;
+    text-align: center;
+  }
+
+  table.tblone a {
+    color: var(--color-white);
+    font-weight: bold;
+    text-decoration: none;
+    background-color: var(--background-button);
+    border-radius: 10px;
+    font-size: 15px;
+    border: none;
+    padding: 5px 10px;
+  }
+  table.tblone a:hover{
+    color: var(--color-white);
+    background-color: var(--background-button-hover);
+  }
+  table.tblone img {
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+  }
+  table.tblone input[type="submit"] {
+    background: var(--background-button);
+    border: none;
+    border-radius: 10px;
+    color:var(--color-white);
+    cursor: pointer;
+    font-size: 14px;
+    padding: 4px 10px;
+  }
+  
+table.tblone tr:nth-child(2n+1){background:#fff;height:30px;}
+table.tblone tr:nth-child(2n){background:#fdf0f1;height:30px;}
+  .Cart_ThanhToan{
+    color: var(--color-red);
+    font-size: 20px;
+    font-weight: 700;
+    font-style: italic;
+
+  }
+
+/* payment */
+.main_payment{
+  padding: 10px;
+  
+}
+
+.main_payment>.heading_payment{
+  color: var(--color-black);
+
+}
+
+.wrapper_method_payment{
+     width: 100%;
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.wrapper_method_payment>a:hover{
+  background-color: var(--background-button);
+  color: var(--color-white);
+  text-shadow: white;
+  padding: 10px 15px;
+  text-decoration: none !important;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 10px;
+}
+.wrapper_method_payment>a{
+  background-color: var(--background-button-hover);
+  color: var(--color-white);
+  text-shadow: white;
+  padding: 10px 15px;
+  text-decoration: none !important;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 10px;
+}
+
+/* oflinepayment */
+a.submit_order {
+  background: var(--background-button);
+  padding: 7px 20px;
+  color: var(--color-white);
+  font-size: 21px;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+a.submit_order:hover {
+  background: var(--background-button-hover);
+  padding: 7px 20px;
+  color: var(--color-white);
+  font-size: 21px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* success */
+.main_success{
+  
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* login */
+
+.main_login{
+  padding: 10px;
+  width: 100%;
+}
+
+.main_login> .login_panel{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border: none;
+  width: 30%;
+  text-align: center;
+  height: 340px !important;
+}
+
+.main_login> .login_panel >h3{
+  color: var(--color-black);
+}
+
+.main_login> .login_panel >.form-group >div{
+  width: 100%;
+}
+.input_login{
+  padding: 7px 10px;
+  width: 100% !important;
+  border-radius: 10px;
+  border: 0.5px solid rgba(0, 0, 0, 0.603);
+}
+
+.login_panel input[type="text"],.login_panel input[type="password"]{
+	font-size:12px;
+	color:#B3B1B1;
+	padding:10px 10px;
+	outline:none;
+	margin:6px 0;
+	width:100%;
+}
+
+.button_login > button{
+  background-color: var(--background-button);
+  color: var(--color-white);
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.button_login > button:hover{
+  background-color: var(--background-button-hover);
+  transition: 0.5s;
+}
+
+.register_account_login{
+  background: #fff none repeat scroll 0 0;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 3px;
+  float: left;
+  height: 284px;
+  padding: 20px;
+  width: 69%;
+  height: auto;
+}
+
+.register_account_login >h3{
+  text-align: center;
+  color: var(--color-black);
+}
+.button_register{
+  width: 100%;
+  text-align: center;
+}
+.button_register >button{
+  background-color: var(--background-button);
+  color: var(--color-white);
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.button_register >button:hover{
+  background-color: var(--background-button-hover);
+  transition: 0.5s;
+}
+
+/* detail */
+.css_danhmuc{
+  width: 100%;
+  padding: 5px 10px ;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.css_danhmuc>span{
+  padding-left: 10px;
+  color: var(--color-red);
+}
+
+.buyfield{
+  width: 50px;
+  text-align: center;
+}
+.buysubmit{
+	background: var(--background-button);
+	border: none;
+	border-radius: 10px;
+	color: var(--color-white);
+	font-family: Arial,"Helvetica Neue","Helvetica",Tahoma,Verdana,sans-serif;
+	font-size: 0.8em;
+	padding: 7px 15px;
+	text-shadow:none;
+	cursor:pointer;
+	outline:none;
+}
+
+.buysubmit:hover{
+  background-color: var(--background-button-hover);
+  transition: .5s;
+}
+
+.MoTaChiTiet{
+  background-color: var(--background-header);
+  color: var(--color-white);
+  font-size: 20px;
+  font-weight: 600;
+  padding: 5px;
+  text-align: center;
+}
+
+.MoTaChiTiet_content{
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(0, 0, 0, 0.514);
+  padding: 10px;
+}
+/* bình luận sản phẩm */
+.binhluan_container{
+  border: 1px solid rgba(0, 0, 0, 0.514);
+  margin-top: 20px;
+  height: 447px;
+  
+}
+.binhluan_scroll{
+  padding: 10px;
+  overflow-y: scroll;
+  float:left ;
+  height: 408px;
+  width: 100%;
+}
+#style-1::-webkit-scrollbar {
+  width: 6px;
+  background-color: #F5F5F5;
+  border-radius: 10px;
+} 
+
+#style-1::-webkit-scrollbar-thumb {
+  background-color: var(--background-button-hover);
+  border-radius: 10px;
+}
+
+#style-1::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: #F5F5F5;
+  border-radius: 10px;
+}
+
+.binhluan_container>.show_binhLuan{
+  height: 353px;
+  padding: 10px;
+  
+}
+
+.show_binhLuan_noidung{
+  background-color: #B3B1B1;
+  border-radius: 10px;
+  box-shadow: blanchedalmond;
+  padding: 5px 15px;
+  min-width: 50px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.show_binhLuan_noidung_ten{
+  text-transform: uppercase;
+  font-size: 17px;
+  font-weight: 500;
+  
+}
+
+.show_binhLuan_noidung_ten>span{
+  text-transform: initial;
+}
+
+.show_binhLuan_noidung_chitiet{
+  padding-left: 20px;
+  font-weight: 500;
+  font-size: 16px;
+  font-style: italic;
+}
+
+.binhluan{
+  width: 100%;
+  text-align: end;
+  padding-right: 2px;
+}
+
+.binhluan>form>.binhluan_ten{
+  width: 115px;
+  border-radius: 10px;
+  background: #0000001a;
+  padding: 5px 10px;
+  font-style: italic;
+}
+
+.binhluan>form>.binhluan_noidung{
+  width: 385px;
+    border-radius: 10px;
+    background: #0000001a;
+    padding: 5px 10px;
+    font-style: italic;
+}
+
+.binhluan>form>.binhluan_button{
+  background-color: var(--background-button-hover);
+  color: var(--color-white);
+  padding: 5px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+#toTop {
+	display:none;
+	text-decoration:none;
+	position:fixed;
+	bottom:10px;
+	right:10px;
+	overflow:hidden;
+	width:48px;
+	height:48px;
+	border:none;
+	text-indent:100%;
+	background: url(../images/up4.png) no-repeat right top !important;
+}
+
+.tintuc{
+  color: white;
+  padding: 0px 10px;
+}
+
+.container_tintuc{
+  padding: 20px !important;
+}
+
+.container_tintuc_title{
+  text-align: center;
+}
+
+.container_tintuc_desc{
+  border: 1px solid;
+  padding: 15px;
+  /* height: 100vh; */
+  border-radius: 4px;
+}
+.cke_reset {
+  height: 1000vh !important;
+}
+
+#cke_catDesc {
+  height: 1000vh !important;
+}
+
