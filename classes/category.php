@@ -550,6 +550,37 @@ class category
         $get_inbox_cart = $this->db->select($query);
         return $get_inbox_cart;
     }
+    //xử lý update đơn hàng trong donhang.php
+    public function updateStatusDH($id, $time, $customer_id)
+    {
+        $id = mysqli_real_escape_string($this->db->link, $id);
+        $time = mysqli_real_escape_string($this->db->link, $time);
+        $customer_id = mysqli_real_escape_string($this->db->link, $customer_id);
+        $query = "UPDATE tbl_donhang SET status = '1' WHERE id = '$id'  AND customer_id='$customer_id' AND time='$time'";
+        $result = $this->db->update($query);
+        if ($result) {
+            $msg = "<span style='color: #228B22;'>Đơn hàng đã được xử lý thành công </span>";
+            return $msg;
+        } else {
+            $msg = "<span style='color:red;'>Đơn hàng đã được xử lý không thành công </span>";
+            return $msg;
+        }
+    }
+    public function updateStatusOrder( $time, $customer_id)
+    {
+       
+        $time = mysqli_real_escape_string($this->db->link, $time);
+        $customer_id = mysqli_real_escape_string($this->db->link, $customer_id);
+        $query = "UPDATE tbl_order SET status = '1' WHERE  customer_id='$customer_id' AND date_order='$time'";
+        $result = $this->db->update($query);
+        if ($result) {
+            $msg = "<span style='color: #228B22;'>Đơn hàng đã được xử lý thành công </span>";
+            return $msg;
+        } else {
+            $msg = "<span style='color:red;'>Đơn hàng đã được xử lý không thành công </span>";
+            return $msg;
+        }
+    }
 
     //Xủ lý đơn đơn hàng trong inbox.php
     public function shifted($id, $time, $price)
@@ -572,15 +603,30 @@ class category
     }
 
     //
-    public function shifted_confirm($id, $time, $price)
+    public function shifted_confirm_donhang($id,$customer_id,$time)
     {
         $id = mysqli_real_escape_string($this->db->link, $id);
+        $customer_id = mysqli_real_escape_string($this->db->link, $customer_id);
         $time = mysqli_real_escape_string($this->db->link, $time);
-        $price = mysqli_real_escape_string($this->db->link, $price);
+        $query = "UPDATE tbl_donhang SET status = '2' WHERE id = '$id'  AND customer_id='$customer_id' AND time='$time'";
+        $result = $this->db->update($query);
+        if ($result) {
+            $msg = "<span style='color: #228B22;'>Đơn hàng đã được xử lý thành công </span>";
+            return $msg;
+        } else {
+            $msg = "<span style='color:red;'>Đơn hàng đã được xử lý không thành công </span>";
+            return $msg;
+        }
+    }
+    
+    public function update_shifted_confirm($time,$customer_id)
+    {
+        $customer_id = mysqli_real_escape_string($this->db->link, $customer_id);
+        $time = mysqli_real_escape_string($this->db->link, $time);
         $query = "UPDATE tbl_order SET 
         status = '2' 
         
-        WHERE customer_id = '$id' AND date_order='$time' AND price='$price'";
+        WHERE customer_id = '$customer_id' AND date_order='$time'";
         $result = $this->db->update($query);
         if ($result) {
             $msg = "<span style='color: #228B22;'>Đơn hàng đã được xử lý thành công </span>";
@@ -598,8 +644,6 @@ class category
         $time = mysqli_real_escape_string($this->db->link, $time);
         $price = mysqli_real_escape_string($this->db->link, $price);
         $query = "DELETE FROM tbl_order 
-    
-        
         WHERE id = '$id' AND date_order='$time' AND price='$price'";
         $result = $this->db->update($query);
         if ($result) {
@@ -882,6 +926,28 @@ class category
         return $result;
     }
 
+    //hiển thị thông tin khách hàng
+    public function show_khachhang()
+    {
+        $query = "SELECT * FROM tbl_donhang order by id desc";
+        $result = $this->db->select($query);
+        return $result;
+    }
+    //hiển thị thông tin khách hàng có customerid
+    public function show_khachhang_id($customer_id)
+    {
+        $query = "SELECT * FROM tbl_donhang where customer_id='$customer_id'";
+        $result = $this->db->select($query);
+        return $result;
+    }
+    //hiển thị đơn hàng của khách đặt 
+    public function show_donhang_AD($id)
+    {
+        $query = "SELECT * FROM tbl_order WHERE date_order='$id'";
+        $result = $this->db->select($query);
+        return $result;
+    }
+
     //update thông tin user trên editprofile
     public function update_customer($data, $id)
     {
@@ -908,14 +974,20 @@ class category
             }
         }
     }
-
+    public function insertKH()
+    {
+        $customer_id = Session::get('customer_id');
+        $time = time();
+        $query = "INSERT INTO tbl_donhang(customer_id,time, status) VALUE('$customer_id', '$time', '0') ";
+        $result = $this->db->update($query);
+    }
     //Đặt hàng và insert giỏ hàng vào CSDL
     public function insertOrder($customer_id)
     {
         $sid = session_id();
+        
         $query = "SELECT * FROM tbl_cart WHERE sid = '$sid'";
         $get_product = $this->db->select($query);
-       
         if ($get_product) {
             while ($result = $get_product->fetch_assoc()) {
                 // var_dump('dữ liệu',$result);
@@ -926,20 +998,12 @@ class category
                 $price = $result['price'] * $quantity;
                 $hinhanh = $result['hinhanh'];
                 $customer_id = $customer_id;
-
-                $query_order = "INSERT INTO tbl_order (productid,productName,customer_id,quantity,price,hinhanh) VALUE('$productid','$productName','$customer_id','$quantity','$price','$hinhanh') ";
+                $time = time();
+                $query_order = "INSERT INTO tbl_order (productid,productName,customer_id,quantity,price,hinhanh, date_order) VALUE('$productid','$productName','$customer_id','$quantity','$price','$hinhanh', '$time') ";
                 $insert_order = $this->db->insert($query_order);
-
-                
-                // if ($insert_order) {
-                //     $alert = "<span style='color:blue;'>Tạo tài khoản thành công!!</span>";
-                //     return $alert;
-                // } else {
-                //     $alert = "<span style='color:red;'>Tạo tài khoản thất bại!!</span>";
-                //     return $alert;
-                // }
             }
         }
+        
     }
 
     public function getAmountPrice($customer_id)
@@ -951,9 +1015,9 @@ class category
     }
 
     //hiển thị giỏ hàng khi khách hàng đã đặt hàng ở trang orderdetails.php
-    public function get_cart_ordered($customer_id)
+    public function get_cart_ordered($id,$customer_id)
     {
-        $query = "SELECT * FROM tbl_order WHERE customer_id = '$customer_id' ";
+        $query = "SELECT * FROM tbl_order WHERE customer_id = '$customer_id' AND date_order = '$id' ";
         $get_price = $this->db->select($query);
         return $get_price;
     }

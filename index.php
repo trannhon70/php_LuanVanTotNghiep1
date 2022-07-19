@@ -17,7 +17,7 @@ include('inc/slider.php');
 			if ($product_feathered) {
 				while ($result = $product_feathered->fetch_assoc()) {
 			?>
-					<div class="grid_1_of_4 images_1_of_4" style="width:23.8%; margin:1% 0% 0% 1%">
+					<div class="grid_1_of_4 images_1_of_4" style="width:23.8%;">
 						<a href="#"><img src="admin/uploads/<?php echo $result['hinhanh'] ?>" alt="..." height="120px" style="object-fit: scale-down;" /></a>
 						<h2><?php echo $result['productName'] ?> </h2>
 						<p><?php echo $fm->textShorten($result['product_desc'], 50) ?></p>
@@ -41,7 +41,7 @@ include('inc/slider.php');
 			if ($product_feathered) {
 				while ($result_new = $product_new->fetch_assoc()) {
 			?>
-					<div class="grid_1_of_4 images_1_of_4" style="width:23.8%; margin:10px 0px 0px 10px">
+					<div class="grid_1_of_4 images_1_of_4" style="width:23.8%; ">
 						<a href="#"><img style="object-fit: scale-down;" src="admin/uploads/<?php echo $result_new['hinhanh'] ?>" alt="..." height="100%" /></a>
 						<h2><?php echo $result_new['productName'] ?> </h2>
 						<p><?php echo $fm->textShorten($result_new['product_desc'], 50) ?></p>
