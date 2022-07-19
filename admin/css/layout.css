@@ -73,9 +73,12 @@ h1 a {
   margin-bottom: 0;
   padding: 22px 10px 3px;
   text-align: left;
+  background-color: red;
 }
 
-.header-repeat{background:url(../img/header-repeat.jpg) repeat-x;}
+.header-repeat{
+	background-color: red;
+}
 
 #branding a{color:#A1EAFF; font-weight:normal;}
 #branding a:hover{color:#fff;}

@@ -21,7 +21,7 @@ nav.vertical ul li{	display:block;}/* vertical menu */
 nav.horizontal ul li{	display: inline-block;}/* horizontal menu */
 img{max-width:100%;}
 :root{
-	--background-header: #2bc930;
+	--primary-color: #ffbe0b;
 	--background-button: hsl(0, 100%, 50%);
 	--background-button-hover: #568b25;
 	--background-white: #fff;
@@ -38,21 +38,29 @@ body{
 	/* background:url(../images/body_bg3.jpg); */
 }
 
-.header_top{
+.header__top{
 	padding:0px 0;
-	background: var(--background-header)	;
+	background-color: var(--primary-color);
 }
-.logo{
+.logo {
 	float:left;
 	width:33%;
-	
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
+
+.logo>a {
+	transform: translateX(-50%);
+}
+
 .logo>a>img{
-	height: 115px;
+	/* height: 115px; */
+	width: 160px;
 	object-fit: cover;
 }
 /**** Header Top Right ****/
-.header_top_right{
+.header__top-right{
 	float:left;
 	width:67%;
 	margin-top:35px;
@@ -556,14 +564,14 @@ p.note{
 	padding:15px 20px;
 	border:1px solid #EBE8E8;
 	border-radius:3px;
-	background-color: var(--background-header);
+	background-color: var(--primary-color);
 }
 .content_bottom{
 	padding:15px 20px;
 	border:1px solid #EBE8E8;
 	border-radius:3px;
 	margin-top:2.6%;
-	background-color: var(--background-header);
+	background-color: var(--primary-color);
 }
 .heading{
 	float:left;
@@ -1458,7 +1466,7 @@ p.note{
 }
 
 .tblone th {
-  background: var(--background-header);
+  background: var(--primary-color);
   color: #fff;
   font-size: 20px;
   padding: 5px 8px;

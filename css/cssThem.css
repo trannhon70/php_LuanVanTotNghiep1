@@ -1,3 +1,7 @@
+:root {
+  --primary-color: #ffbe0b;
+}
+
 .tieptucMS{
     background-color: var(--background-button);
     color: var(--color-white);
@@ -18,7 +22,7 @@
 
 
 .tblone th {
-    background: var(--background-header);
+    background-color: var(--primary-color) !important;
     color: #fff;
     font-size: 20px;
     padding: 5px 8px;
@@ -62,6 +66,10 @@ table.tblone tr:nth-child(2n){background:#fdf0f1;height:30px;}
     font-weight: 700;
     font-style: italic;
 
+  }
+
+  .tblone th {
+    background-color: var(--primary-color) !important;
   }
 
 /* payment */
@@ -254,7 +262,7 @@ a.submit_order:hover {
 }
 
 .MoTaChiTiet{
-  background-color: var(--background-header);
+  background-color: var(--primary-color);
   color: var(--color-white);
   font-size: 20px;
   font-weight: 600;
@@ -406,3 +414,51 @@ a.submit_order:hover {
   height: 1000vh !important;
 }
 
+
+/* Introduce */
+.introduce {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.introduce .introduce__wrap {
+  padding: 40px 0 80px 0;
+  width: 70%;
+}
+
+.introduce .introduce__wrap h3 {
+  color: var(--primary-color);
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 60px;
+}
+
+.introduce__bottom {
+  display: flex;
+}
+
+.introduce__bottom .introduce__left {
+  flex: 1;
+}
+
+.introduce__left .introduce__left-img {
+  width: 100%;
+}
+
+.introduce__bottom .introduce__right {
+  flex: 2;
+  padding: 0 10px 0 60px;
+}
+
+.introduce__right-list .introduce__right-item {
+  padding: 0 0 10px 0;
+}
+
+.introduce__right-item h5 {
+  color: var(--primary-color);
+}
+
+.introduce__right-item h5 i {
+  width: 35px;
+}

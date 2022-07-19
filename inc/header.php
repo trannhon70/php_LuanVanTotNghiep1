@@ -46,6 +46,7 @@ header("Cache-Control: max-age=2592000");
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
     
     <script type="text/javascript">
     $(document).ready(function($) {
@@ -59,15 +60,15 @@ header("Cache-Control: max-age=2592000");
 </head>
 
 <body>
-    <div class="header_top">
+    <div class="header__top">
         <div class="logo">
-            <a href="index.php"><img src="images/logo1.jpg" alt="" /></a>
+            <a href="index.php"><img src="images/logoY.png" alt="" /></a>
         </div>
-        <div class="header_top_right">
+        <div class="header__top-right">
             <div class="search_box">
                 <form action="search.php" method="post">
-                    <input type="text" placeholder="Tìm kiếm sản phẩm " name="tukhoa">
-                    <input type="submit" name="search_product" value="Tìm kiếm">
+                    <input type="text" placeholder="Tìm kiếm sản phẩm " name="tukhoa" class="header__top-input">
+                    <input type="submit" name="search_product" value="Tìm kiếm" class="header__top-input">
                 </form>
             </div>
 
@@ -118,6 +119,7 @@ header("Cache-Control: max-age=2592000");
         <div class="menu">
             <ul id="dc_mega-menu-orange" class="dc_mm-orange">
                 <li><a href="index.php">Trang chủ</a></li>
+                <li><a href="introduce.php">Giới thiệu</a></li>
                 
                 <!-- <li><a href="products.php">Products</a> </li>
 					<li><a href="topbrands.php">Top Brands</a></li> -->
@@ -161,6 +163,7 @@ header("Cache-Control: max-age=2592000");
 						echo '';
 					}
 					?>
+
                 <div class="clear"></div>
             </ul>
         </div>
