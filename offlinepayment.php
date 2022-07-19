@@ -3,12 +3,12 @@ include('inc/header.php');
 
 ?>
 <?php
+
 if (isset($_GET['orderid']) && $_GET['orderid']=='order') {
+   
     $customer_id = Session::get('customer_id');
     $insertOrder = $cat->insertOrder($customer_id);
-
-    //khi đặt hàng thành công sẽ xóa tất cả giỏ hàng của user
-    
+    $insertKH = $cat->insertKH();
     header('Location:success.php');
     $delCart = $cat->del_all_data_cart();
 } 
@@ -73,8 +73,8 @@ if (isset($_GET['orderid']) && $_GET['orderid']=='order') {
                                 <td><?php echo $i; ?></td>
                                 <td><?php echo $result['productName'] ?></td>
 
-                                <td><?php echo number_format($result['price']) . " " . "VNĐ" ?></td>
-                                <td>
+                                <td ><?php echo number_format($result['price']) . " " . "VNĐ" ?></td>
+                                <td >
                                     <?php echo $result['quantity'] ?>
                                 </td>
                                 <td><?php $total = $result['price'] * $result['quantity'];

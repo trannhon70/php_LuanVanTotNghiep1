@@ -156,7 +156,7 @@ header("Cache-Control: max-age=2592000");
 					$customer_id = Session::get('customer_id');
 					$check_order = $cat->check_order($customer_id);
 					if ($check_order == true) {
-						echo '<li><a href="orderdetails.php">Đơn hàng</a></li>';
+						echo '<li><a href="orderTong.php">Đơn hàng</a></li>';
 					} else {
 						echo '';
 					}
