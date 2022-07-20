@@ -47,7 +47,8 @@ class category
         $result = $this->db->select($query);
         return $result;
     }
-
+    //hiển thị hình
+    
     //xóa danh mục tin tức
     public function del_category_post($id)
     {
@@ -623,10 +624,7 @@ class category
     {
         $customer_id = mysqli_real_escape_string($this->db->link, $customer_id);
         $time = mysqli_real_escape_string($this->db->link, $time);
-        $query = "UPDATE tbl_order SET 
-        status = '2' 
-        
-        WHERE customer_id = '$customer_id' AND date_order='$time'";
+        $query = "UPDATE tbl_order SET status = '2' WHERE date_order='$time'";
         $result = $this->db->update($query);
         if ($result) {
             $msg = "<span style='color: #228B22;'>Đơn hàng đã được xử lý thành công </span>";
@@ -848,8 +846,63 @@ class category
         return $result;
     }
 
+    //kiểm tra email có tồn tại trong data ko nếu có thì chuyển trang qua forgotpassword.php
+    public function check_Email($data){
+        $email = mysqli_real_escape_string($this->db->link, $data['email']);
+        if($email == ""){
+            $alert = "<span style='color:red;'>Các trường không được bỏ trống !</span>";
+            return $alert;
+        }else{
+            $check_email = "SELECT * FROM tbl_customer WHERE email='$email' ";
+            $result_check = $this->db->select($check_email);
+            if($result_check != false){
+                $values = $result_check->fetch_assoc();
+                Session::set('customer_email', true);
+                Session::set('customer_email', $values['email']);
+                header('Location:forgotpassword.php');
+               
+            }else{
+               
+                $alert = "<span style='color:red;'>email của bạn không đúng !</span>";
+                return $alert;
+            }
+        }
+    }
     
-
+    //Đổi mật khẩu trong data
+    public function doi_matKhau($data){
+        $email = mysqli_real_escape_string($this->db->link, $data['email']);
+        $password = mysqli_real_escape_string($this->db->link, md5($data['password']));
+        $password1 = mysqli_real_escape_string($this->db->link, md5($data['password1']));
+       
+        if ($email == "" || $password =="" || $password1=="") {
+            $alert = "<span style='color:red;'>Các trường không được bỏ trống !</span>";
+            return $alert;
+        } elseif($password === $password1){
+                
+            $check_email = "SELECT * FROM tbl_customer WHERE email='$email' LIMIT 1";
+            $result_check = $this->db->select($check_email);
+            if ($result_check) {
+                $update = "UPDATE tbl_customer SET password='$password' WHERE email='$email' ";
+                $result = $this->db->insert($update);
+                if ($result) {
+                    $alert = "<span style='color:blue;'>Thay đổi mật khẩu thành công!!</span>";
+                    return $alert;
+                } else {
+                    $alert = "<span style='color:red;'>Thay đổi mật khẩu thất bại!!</span>";
+                    return $alert;
+                }
+            }else{
+                $alert = "<span style='color:red'>email không đúng</span>";
+                return $alert;
+            }
+            
+        }else{
+            $alert = "<span style='color:red;'>Mật khẩu nhập lại không đúng !</span>";
+            return $alert;
+            
+        }
+    }
     //Đăng ký tài khoản người dùng
     public function insert_customers($data)
     {

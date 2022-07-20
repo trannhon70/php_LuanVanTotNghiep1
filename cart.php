@@ -78,28 +78,11 @@ if (!isset($_GET['id'])) {
 				<?php
 				$check_cart = $cat->check_cart();
 				if ($check_cart) {
-
-
 				?>
 					<table  style="float:right;text-align:left;" width="40%">
-						<!-- <tr>
-							<th>Tổng thu : </th>
-							<td><?php
-
-								echo number_format($subtotal) . " " . "VNĐ";
-								Session::set("sum", $subtotal);
-								Session::set("qty", $qty);
-								?></td>
-						</tr> -->
-						<!-- <tr>
-							<th>VAT : </th>
-							<td colspan="3">giá sản phẩm đã bao gồm thuế VAT</td>
-						</tr> -->
 						<tr>
 							<th >Tổng số tiền phải thanh toán :</th>
-							<td class="Cart_ThanhToan"><?php
-								// $vat = $subtotal * 0.1;
-								// $gtotal = $subtotal + $vat;
+							<td class="Cart_ThanhToan"><?php								
 								echo number_format($subtotal) . " " . "VNĐ";
 								?></td>
 						</tr>

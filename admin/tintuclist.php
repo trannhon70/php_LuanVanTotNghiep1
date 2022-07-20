@@ -37,10 +37,13 @@
 								
 						?>
 						<tr class="even gradeC">
-							<td><?php echo $result['id_cate_post'];; ?></td>
+							<td><?php echo $result['id_cate_post']; ?></td>
 							<td><?php echo $result['title']; ?> </td>
-							<td><?php echo $result['description']; ?> </td>
-							<td><?php 
+							<td>
+								<img src="<?php echo $result['description'];?>" alt="">
+								<?php echo $result['description'];?> </td>
+							<td>
+								<?php 
                                 if($result['status'] == 0){
                                     echo 'hiển thị';
                                 }else{

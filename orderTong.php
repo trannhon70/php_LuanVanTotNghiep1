@@ -13,7 +13,6 @@ include('inc/header.php');
         $time = $_GET['time'];
         $customer_id = $_GET['customerId'];
         $shifted_confirm = $cat->shifted_confirm_donhang($id,$customer_id,$time);
-
         $update_shifted_confirm=$cat->update_shifted_confirm($time,$customer_id);
     }
     // if(isset($_GET['delid']) ){
@@ -23,27 +22,12 @@ include('inc/header.php');
     //     $del_shifted = $cat->del_shifted($id,$time,$price);
     // }
 ?>
-<?php
-// if (isset($_GET['cartid'])) {
-//     $cartid = $_GET['cartid'];
-//     $delcart = $cat->del_product_cart($cartid);
-// }
-// if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
-//     $cartid = $_POST['cartid'];
-//     $quantity = $_POST['quantity'];
-//     $update_quantity_cart = $cat->update_quantity_cart($quantity, $cartid);
-//     if ($quantity <= 0) {
-//         $delcart = $cat->del_product_cart($cartid);
-//     }
-// }
-?>
+
 <style type="text/css">
 .box_left {
     width: 100%;
     border: 1px solid #666;
-
     padding: 4px;
-
 }
 </style>
 <form action="" method="post">

@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
                 <input class="input_login" name="password" type="password" placeholder="password">
             </div>
             <div style="text-align: start;">
-                <a style="color:red" href="#">Quên mật khẩu</a>
+                <a style="color:red" href="checkemail.php">Quên mật khẩu</a>
             </div>
             <div class="button_login">
                 <button type="submit" name="login">Đăng nhập</button>

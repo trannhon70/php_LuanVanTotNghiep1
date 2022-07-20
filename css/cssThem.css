@@ -406,3 +406,7 @@ a.submit_order:hover {
   height: 1000vh !important;
 }
 
+.main_forgot{
+  padding: 20px 30%;
+  text-align: center;
+}
