@@ -22,8 +22,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['wishlist'])) {
 	$productid = $_POST['productid'];
 	$insertWishlist = $cat->insertWishlist($productid, $customer_id);
 }
-if(isset($_POST['binhluan_submit'])){
-	$binhluan_insert = $cat-> insert_binhluan();
+if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['binhluan_submit'])){
+    $productid = $_POST['product_id_binhluan'];
+    $tennguoibinhluan = $_POST['tennguoibinhluan'];
+    $binhluan = $_POST['binhluan'];
+	$binhluan_insert = $cat-> insert_binhluan($productid, $tennguoibinhluan,$binhluan);
 }
 
 ?>

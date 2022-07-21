@@ -27,6 +27,7 @@ if(isset($_GET['statusid']) ){
                     <tr>
                         <th>STT</th>
                         <th>Số seri</th>
+                        <th>Ngày/tháng/năm</th>
                         <th>Thông tin KH</th>
                         <th>Thông tin chi tiết đơn hàng</th>
                         <th>Thao tác</th>
@@ -45,6 +46,7 @@ if(isset($_GET['statusid']) ){
                     <tr class="odd gradeX">
                         <td><?php echo $i ?></td>
                         <td><?php echo $result['time'] ?></td>
+                        <td><?php echo $result['date'] ?></td>
                         <td><a href="customer.php?customerid=<?php echo $result['customer_id'] ?>">Xem địa chỉ</a></td>
                         <td><a href="giohangAD.php?donhangid=<?php echo $result['time'] ?>">Xem đơn hàng</a></td>
                         <td>

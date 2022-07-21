@@ -3,6 +3,10 @@ include('inc/header.php');
 
 ?>
 <?php
+	$login_check = Session::get('customer_login');
+    if ($login_check == false) {
+        header('Location:login.php');
+    }
     if(isset($_GET['proid'])){
         $customer_id = Session::get('customer_id');
         $proid = $_GET['proid'];

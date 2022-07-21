@@ -98,14 +98,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['save'])) {
                                 type="number" name="phone" value="<?php echo $result['phone'] ?>"> </td>
 
                     </tr>
-                    <tr>
-                        <td>Mật khẩu mới</td>
-                        <td>:</td>
-                        <td><input
-                                style="color: black; padding: 3px 5px;font-weight: 600;width:50%; border-radius:10px ; border: 1px solid white; background:var(--background-header);"
-                             name="password" value="<?php echo $result['password'] ?>"> </td>
-
-                    </tr>
+                    
                     <tr>
                         <td colspan="3"><button style="background-color: var(--background-button);
                             border: none;color: white;

@@ -4,6 +4,7 @@ include('inc/header.php');
 ?>
 
 <?php
+
 if (isset($_GET['cartid'])) {
 	$cartid = $_GET['cartid'];
 	$delcart = $cat->del_product_cart($cartid);
@@ -94,7 +95,14 @@ if (!isset($_GET['id'])) {
 			<div class="shopping">
 				<div class="shopleft">
 					<a class="tieptucMS" href="index.php"> Tiếp tục mua sắm</a>
-					<a class="tieptucMS" href="payment.php">Tiến hành thanh toán</a>
+					<?php
+					$check_cart = $cat->check_cart();
+					if ($check_cart) {
+					?>
+						<a class="tieptucMS" href="payment.php">Tiến hành thanh toán</a>
+					<?php } else {
+						echo "";
+					} ?>
 				</div>
 				<div class="shopright">
 					

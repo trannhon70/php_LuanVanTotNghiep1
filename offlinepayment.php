@@ -3,7 +3,10 @@ include('inc/header.php');
 
 ?>
 <?php
-
+$login_check = Session::get('customer_login');
+if ($login_check == false) {
+    header('Location:login.php');
+}
 if (isset($_GET['orderid']) && $_GET['orderid']=='order') {
    
     $customer_id = Session::get('customer_id');
@@ -175,7 +178,15 @@ if (isset($_GET['orderid']) && $_GET['orderid']=='order') {
             </div>
         </div>
         <div style="width:100% ; text-align: center; margin-bottom: 20px;height: 40px;">
-            <a href="?orderid=order" class="submit_order">Đặt hàng</a>
+        <?php
+            $check_cart = $cat->check_cart();
+            if ($check_cart) {
+            ?>
+                <a href="?orderid=order" class="submit_order">Đặt hàng</a>
+            <?php } else {
+                echo "";
+        } ?>
+            
         </div>
     </div>
 </form>

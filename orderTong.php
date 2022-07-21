@@ -41,8 +41,8 @@ include('inc/header.php');
                             <tr>
                                 <th >STT</th>
                                 <th>Mã đơn hàng</th>
-                                <th>Thông tin chi tiết đơn hàng</th>
-                                <!-- <th>Thời gian</th> -->
+                                <th>Ngày/tháng/năm</th>
+                                <th>Thông tin chi tiết đơn hàng</th>                    
                                 <th >Thao tác</th>
 
                             </tr>
@@ -59,8 +59,8 @@ include('inc/header.php');
                             <tr>
                                 <td><?php echo $i; ?></td>
                                 <td><?php echo $result['time'] ?></td>
-                                <td><a href="orderdetails.php?donhangid=<?php echo $result['time'] ?>">Xem chi tiết đơn hàng</a></td>
-                                
+                                <td><?php echo $result['date'] ?></td>
+                                <td><a href="orderdetails.php?donhangid=<?php echo $result['time'] ?>">Xem chi tiết đơn hàng</a></td>                                
                                 <td>
                                     <?php
                                         if($result['status']=='0'){

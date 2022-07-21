@@ -128,6 +128,8 @@ class category
             }  
         }
     }
+    
+
     //hiển thị danh mục
     public function show_category()
     {
@@ -989,7 +991,7 @@ class category
     //hiển thị thông tin khách hàng có customerid
     public function show_khachhang_id($customer_id)
     {
-        $query = "SELECT * FROM tbl_donhang where customer_id='$customer_id'";
+        $query = "SELECT * FROM tbl_donhang where customer_id='$customer_id' order by id desc";
         $result = $this->db->select($query);
         return $result;
     }
@@ -1011,12 +1013,12 @@ class category
         $address = mysqli_real_escape_string($this->db->link, $data['address']);
         $phone = mysqli_real_escape_string($this->db->link, $data['phone']);
         // $password = mysqli_real_escape_string($this->db->link, $data['password']);
-        $password = mysqli_real_escape_string($this->db->link, md5($data['password']));
-        if ($name == "" || $city == "" || $zipcode == "" || $email == "" || $address == "" ||  $phone == "" || $password == "") {
+       
+        if ($name == "" || $city == "" || $zipcode == "" || $email == "" || $address == "" ||  $phone == "" ) {
             $alert = "<span style='color:red;'>Các trường không được bỏ trống !</span>";
             return $alert;
         } else {
-            $query = "UPDATE tbl_customer SET name='$name', city='$city', zipcode='$zipcode', email='$email', address='$address', phone='$phone', password='$password' WHERE id='$id'";
+            $query = "UPDATE tbl_customer SET name='$name', city='$city', zipcode='$zipcode', email='$email', address='$address', phone='$phone' WHERE id='$id'";
             $result = $this->db->insert($query);
             if ($result) {
                 $alert = "<span style='color:blue;'>Thông tin cá nhân của bạn đã được sửa thành công!!</span>";
@@ -1174,18 +1176,16 @@ class category
     }
 
     //bình luận sản phẩm 
-    public function insert_binhluan(){
-        $product_id = $_POST['product_id_binhluan'];
-        $tenbinhluan = $_POST['tennguoibinhluan'];
-        $binhluan = $_POST['binhluan'];
-        // echo $product_id;
-        // echo $tenbinhluan;
-        // echo $binhluan;
-        if($tenbinhluan=='' || $binhluan==''){
+    public function insert_binhluan($productid, $tennguoibinhluan,$binhluan){
+        
+        $productid = mysqli_real_escape_string($this->db->link, $productid);
+        $tennguoibinhluan = mysqli_real_escape_string($this->db->link, $tennguoibinhluan);
+        $binhluan = mysqli_real_escape_string($this->db->link, $binhluan);
+        if($tennguoibinhluan=='' || $binhluan==''){
             $alert = "<span style='color:red;'>Các trường không được bỏ trống!</span>";
             return $alert;
         }else{
-            $query = "INSERT INTO tbl_binhluan(tenbinhluan,binhluan,product_id,tinhTrang) VALUES('$tenbinhluan','$binhluan','$product_id','0') ";
+            $query = "INSERT INTO tbl_binhluan(tenbinhluan,binhluan,product_id,tinhTrang) VALUES('$tennguoibinhluan','$binhluan','$productid','0') ";
             $result = $this->db->insert($query);
             if($result){
                 $alert = "<span style='color:blue;'>Bình luận của bạn sẽ được Admin kiểm duyệt</span>";
