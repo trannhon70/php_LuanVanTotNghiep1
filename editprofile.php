@@ -71,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['save'])) {
                         <td>:</td>
                         <td><input
                                 style="color: black; padding: 3px 5px;font-weight: 600;width:50%; border-radius:10px ; border: 1px solid white ; background:var(--background-header);"
-                                type="text" name="zipcode" value="<?php echo $result['zipcode'] ?>"> </td>
+                                type="number" name="zipcode" value="<?php echo $result['zipcode'] ?>"> </td>
 
                     </tr>
                     <tr>
@@ -85,7 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['save'])) {
                     <tr>
                         <td>Email</td>
                         <td>:</td>
-                        <td><input
+                        <td><input readonly
                                 style="color: black; padding: 3px 5px;font-weight: 600;width:50%; border-radius:10px ; border: 1px solid white; background:var(--background-header);"
                                 type="email" name="email" value="<?php echo $result['email'] ?>"> </td>
 

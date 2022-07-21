@@ -22,12 +22,12 @@
             <table class="data display datatable" id="example">
 			<thead>
 				<tr>
-					<th>ID</th>
+					<th>STT</th>
 					<th>Tên sản phẩm</th>
 					<th>Hình ảnh</th>
 					<th>Danh mục </th>
 					<th>Thương hiệu</th>
-					<th>Mô tả</th>
+					
 					<th>Giá</th>
 					<th>Tình trạng</th>
 					<th>Thao tác</th>
@@ -35,21 +35,21 @@
 			</thead>
 			<tbody>
 				<?php 
-					
+					$i =0;
 					$pdlist = $pd->show_product();
 					if($pdlist){
 						while($result = $pdlist->fetch_assoc()){
-
+							$i++;
 					
 				?>
 				<tr class="odd gradeX">
-					<td class="center"> <?php echo $result['productid'];?></td>
+					<td class="center"> <?php echo $i;?></td>
 					<td class="center"><?php echo $result['productName'];?></td> 
 					<td class="center"><img src="uploads/<?php echo $result['hinhanh'];?>" alt="..." width="90px" height="70px" > </td>
 					<td class="center"> <?php echo $result['catName'];?></td>
 					<td class="center"> <?php echo $result['brandName'];?></td>
-					<td class="center"> <?php echo $fm->textShorten($result['product_desc'],50);?></td>
-					<td class="center"> <?php echo $result['price'];?></td>
+					
+					<td class="center"> <?php echo number_format($result['price'],0,'.',' ') ;?> VNĐ</td>
 					<td class="center"> <?php 
 						if($result['type1']==0){
 							echo 'không nổi bật';

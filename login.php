@@ -81,9 +81,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
                         <input class="form-control col-12" type="text" name="address" placeholder="địa chỉ">
                     </div>
                     <div class="col-12 col-lg-6">
-                        <select class="form-control col-12" id="country" name="country">
-                            <option class="form-control col-12" value="null">Chọn quốc gia</option>
-                            <option class="form-control col-12" value="vn">Việt Nam</option>
+                        <select placeholder="Chọn quốc gia" class="form-control col-12" id="country" name="country">
+                            <!-- <option class="form-control col-12" value="null">Chọn quốc gia</option> -->
+                            <option class="form-control col-12" value="Việt Nam">Việt Nam</option>
 
                         </select>
                     </div>

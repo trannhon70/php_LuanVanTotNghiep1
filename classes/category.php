@@ -923,8 +923,10 @@ class category
         } else {
             $check_email = "SELECT * FROM tbl_customer WHERE email='$email' LIMIT 1";
             $result_check = $this->db->select($check_email);
-            if ($result_check) {
-                $alert = "<span style='color:red'>email này đã có người đăng ký , bạn vui lòng đăng ký email khác cảm ơn... </span>";
+            $check_phone = "SELECT * FROM tbl_customer WHERE phone='$phone' LIMIT 1";
+            $result_phone = $this->db->select($check_phone);
+            if ($result_check || $result_phone) {
+                $alert = "<span style='color:red'>email hoặc số điện thoại đã có người đăng ký , bạn vui lòng đăng ký lại </span>";
                 return $alert;
             } else {
                 $query = "INSERT INTO tbl_customer (name,address,city,country,zipcode,phone,email,password) VALUE('$name','$address','$city','$country','$zipcode','$phone','$email' ,'$password') ";
@@ -1009,16 +1011,16 @@ class category
         $name = mysqli_real_escape_string($this->db->link, $data['name']);
         $city = mysqli_real_escape_string($this->db->link, $data['city']);
         $zipcode = mysqli_real_escape_string($this->db->link, $data['zipcode']);
-        $email = mysqli_real_escape_string($this->db->link, $data['email']);
+        // $email = mysqli_real_escape_string($this->db->link, $data['email']);
         $address = mysqli_real_escape_string($this->db->link, $data['address']);
         $phone = mysqli_real_escape_string($this->db->link, $data['phone']);
         // $password = mysqli_real_escape_string($this->db->link, $data['password']);
        
-        if ($name == "" || $city == "" || $zipcode == "" || $email == "" || $address == "" ||  $phone == "" ) {
+        if ($name == "" || $city == "" || $zipcode == "" || $address == "" ||  $phone == "" ) {
             $alert = "<span style='color:red;'>Các trường không được bỏ trống !</span>";
             return $alert;
         } else {
-            $query = "UPDATE tbl_customer SET name='$name', city='$city', zipcode='$zipcode', email='$email', address='$address', phone='$phone' WHERE id='$id'";
+            $query = "UPDATE tbl_customer SET name='$name', city='$city', zipcode='$zipcode', address='$address', phone='$phone' WHERE id='$id'";
             $result = $this->db->insert($query);
             if ($result) {
                 $alert = "<span style='color:blue;'>Thông tin cá nhân của bạn đã được sửa thành công!!</span>";
