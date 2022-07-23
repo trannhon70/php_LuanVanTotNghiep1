@@ -68,17 +68,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
 
                 <div class="row mb-2">
                     <div class="col-12 col-lg-6">
-                        <input class="form-control col-12" type="text" name="zipcode" placeholder="mã thành phố ">
+                        <input class="form-control col-12" type="text" name="zipcode" placeholder="Mã thành phố hoặc tỉnh ">
                     </div>
                     <div class="col-12 col-lg-6">
                         <input class="form-control col-12"
-                            type="email" name="email" placeholder="email">
+                            type="email" name="email" placeholder="Email">
                     </div>
                 </div>
 
                 <div class="row mb-2">
                     <div class="col-12 col-lg-6">
-                        <input class="form-control col-12" type="text" name="address" placeholder="địa chỉ">
+                        <input class="form-control col-12" type="text" name="address" placeholder="Địa chỉ">
                     </div>
                     <div class="col-12 col-lg-6">
                         <select placeholder="Chọn quốc gia" class="form-control col-12" id="country" name="country">

@@ -128,8 +128,28 @@ class category
             }  
         }
     }
+    //hiển thị danh sách tài khoản người dụng ở trang admin 
+    public function show_nguoiDungAdmin()
+    {
+        $query = "SELECT * FROM tbl_customer order by id desc";
+        $result = $this->db->select($query);
+        return $result;
+    }
+    //xóa người dùng ở trang admin 
     
-
+    public function del_NguoiDung($id)
+    {     
+        $query = "DELETE FROM tbl_customer WHERE id = '$id'";
+        $result = $this->db->delete($query);
+        if ($result) {
+            $alert = "<span style='color:blue;'>Xóa tài khoản người dùng thành công!!</span>";
+            return $alert;
+        } else {
+            $alert = "<span style='color:blue;'>Xóa tài khoản người dùng thành công!!</span>";
+            return $alert;
+        }
+        
+    }
     //hiển thị danh mục
     public function show_category()
     {

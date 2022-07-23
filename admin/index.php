@@ -2,9 +2,9 @@
 <?php include 'inc/sidebar.php';?>
         <div class="grid_10">
             <div class="box round first grid">
-                <h2> Dashbord</h2>
+                <!-- <h2> Dashbord</h2> -->
                 <div class="block">               
-                  Welcome admin panel        
+                  Xin chào bạn đến với trang quản lý của hệ thông website bán hàng online         
                 </div>
             </div>
         </div>
