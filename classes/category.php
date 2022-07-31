@@ -306,6 +306,7 @@ class category
         $product_desc = mysqli_real_escape_string($this->db->link, $data['product_desc']);
         $price = mysqli_real_escape_string($this->db->link, $data['price']);
         $type = mysqli_real_escape_string($this->db->link, $data['type']);
+        $soluong = mysqli_real_escape_string($this->db->link, $data['soluong']);
         //kiểm tra hình ảnh và lấy hình ảnh cho vào folder uploads
         $permited = array('jpg', 'jpeg', 'png', 'gif');
         $file_name = $_FILES['image']['name'];
@@ -322,7 +323,7 @@ class category
             $alert = "<span style='color:red;'>Bạn chỉ có thể update hình ảnh có đuôi là : " . implode(' , ', $permited) . "</span>";
             return $alert;
         }
-        if ($productName == "" || $brand == "" || $category == "" || $product_desc == "" || $price == "" || $type == "" || $file_name == "") {
+        if ($productName == "" || $brand == "" || $category == "" || $product_desc == "" || $price == "" || $type == "" || $file_name == "" || $soluong == "") {
             $alert = "<span style='color:red;'>Các trường không được bỏ trống !</span>";
             return $alert;
         } else {
@@ -333,7 +334,7 @@ class category
                 return $alert;
             }else{
                 move_uploaded_file($file_temp, $uploaded_image);
-                $query = "INSERT INTO tbl_product(productName,catid,brand_id,product_desc,type1,price,hinhanh) VALUE('$productName','$category','$brand','$product_desc','$type','$price','$unique_image') ";
+                $query = "INSERT INTO tbl_product(productName,catid,brand_id,product_desc,type1,price,hinhanh,soluong) VALUE('$productName','$category','$brand','$product_desc','$type','$price','$unique_image','$soluong') ";
                 $result = $this->db->insert($query);
             if ($result) {
                 $alert = "<span style='color:blue;'>Thêm sản phẩm thành công!!</span>";
@@ -374,6 +375,7 @@ class category
         $product_desc = mysqli_real_escape_string($this->db->link, $data['product_desc']);
         $price = mysqli_real_escape_string($this->db->link, $data['price']);
         $type = mysqli_real_escape_string($this->db->link, $data['type']);
+        $soluong = mysqli_real_escape_string($this->db->link, $data['soluong']);
 
         //Kiem tra hình ảnh và lấy hình ảnh cho vào folder upload
         $permited  = array('jpg', 'jpeg', 'png', 'gif');
@@ -387,7 +389,7 @@ class category
         $unique_image = substr(md5(time()), 0, 10) . '.' . $file_ext;
         $uploaded_image = "uploads/" . $unique_image;
 
-        if ($productName == "" || $brand == "" || $category == "" || $product_desc == "" || $price == "" || $type == "") {
+        if ($productName == "" || $brand == "" || $category == "" || $product_desc == "" || $price == "" || $type == "" || $soluong == "") {
             $alert = "<span style='color:red;'>Các trường không được bỏ trống !</span>";
             return $alert;
         } else {
@@ -409,6 +411,7 @@ class category
                 product_desc = '$product_desc' ,
                 type1 = '$type' ,
                 price = '$price' ,
+                soluong = '$soluong' ,
                 hinhanh = '$unique_image' 
                 
                 WHERE productid = '$id'";
@@ -420,7 +423,8 @@ class category
                 brand_id = '$brand' ,
                 product_desc = '$product_desc' ,
                 type1 = '$type' ,
-                price = '$price' 
+                price = '$price' ,
+                soluong = '$soluong' 
                
                 WHERE productid = '$id'";
             }
@@ -679,10 +683,10 @@ class category
     //Fond end 
     //ẩn hoặc hiện sản phẩm
     public function getproduct_feathered()
-    {
-        $query = "SELECT * FROM tbl_product WHERE type1 = '0'";
-        $result = $this->db->select($query);
-        return $result;
+    {      
+            $query = "SELECT * FROM tbl_product WHERE type1 = '0'";
+            $result = $this->db->select($query);
+            return $result;      
     }
     //hiển thị số sản phẩm mới nhất
     public function getproduct_new()
@@ -755,20 +759,37 @@ class category
         return $result;
     }
     //cập nhật giỏ hàng
-    public function update_quantity_cart($quantity, $cartid)
+    public function update_quantity_cart($quantity, $cartid, $productid)
     {
         $quantity = mysqli_real_escape_string($this->db->link, $quantity);
         $cartid = mysqli_real_escape_string($this->db->link, $cartid);
-        $query = "UPDATE tbl_cart SET 
-        quantity = '$quantity'
-        WHERE cartid = '$cartid'";
-        $result = $this->db->update($query);
-        if ($result) {
-            header('Location:cart.php');
-        } else {
-            $msg = "<span style='color:red'>Giỏ hàng của bạn đã cập nhật không thành công</span>";
-            return $msg;
-        }
+        $productid = mysqli_real_escape_string($this->db->link, $productid);
+
+        $query1 = "SELECT * FROM tbl_product WHERE productid = '$productid' ";
+        $get_product1 = $this->db->select($query1);
+        if($get_product1){
+            while($result1 = $get_product1->fetch_assoc()){
+                $productid1 = $result1['productid'];
+                $soluong = $result1['soluong'];
+                $name = $result1['productName'];
+                if($soluong >= $quantity){
+                    $query = "UPDATE tbl_cart SET 
+                    quantity = '$quantity'
+                    WHERE cartid = '$cartid'";
+                    $result = $this->db->update($query);
+                    if ($result) {
+                        header('Location:cart.php');
+                    } else {
+                        $msg = "<span style='color:red'>Giỏ hàng của bạn đã cập nhật không thành công</span>";
+                        return $msg;
+                    }
+                }else{
+                    $msg = "<span style='color:red'>Số lượng $name trong cửa hàng là $soluong , bạn không được mua vượt quá $soluong sản phẩm </span>";
+                    return $msg;
+                }
+                
+            }
+        } 
     }
     //hàm xóa giỏ hàng
     public function del_product_cart($cartid)
@@ -1058,16 +1079,39 @@ class category
         $query = "INSERT INTO tbl_donhang(customer_id,time, status) VALUE('$customer_id', '$time', '0') ";
         $result = $this->db->update($query);
     }
-    //Đặt hàng và insert giỏ hàng vào CSDL
-    public function insertOrder($customer_id)
-    {
-        $sid = session_id();
-        
+    //update lại số lượng sản phẩm trong product
+    public function updateSoLuongSP(){
+        $sid = session_id();       
         $query = "SELECT * FROM tbl_cart WHERE sid = '$sid'";
         $get_product = $this->db->select($query);
         if ($get_product) {
             while ($result = $get_product->fetch_assoc()) {
                 // var_dump('dữ liệu',$result);
+                $productid = $result['productid'];
+                 $quantity = $result['quantity'];
+                 $query1 = "SELECT * FROM tbl_product WHERE productid = '$productid'";
+                 $get_product1 = $this->db->select($query1);
+                 if($get_product1){
+                    while($result1 = $get_product1->fetch_assoc()){
+                        $productid1 = $result1['productid'];
+                        $soluong = $result1['soluong'];
+                        $tong = $soluong - $quantity;
+                        $query2 = "UPDATE tbl_product SET soluong = '$tong' where productid='$productid1'";
+                        $result2 = $this->db->update($query2);
+                    }
+                 }
+            }
+        }
+    }
+    //Đặt hàng và insert giỏ hàng vào CSDL
+    public function insertOrder($customer_id)
+    {
+        $sid = session_id();       
+        $query = "SELECT * FROM tbl_cart WHERE sid = '$sid'";
+        $get_product = $this->db->select($query);
+        if ($get_product) {
+            while ($result = $get_product->fetch_assoc()) {
+                // var_dump('dữ liệu order',$result);
                 $productid = $result['productid'];
                 $productName = $result['productName'];
 

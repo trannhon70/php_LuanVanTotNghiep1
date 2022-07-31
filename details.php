@@ -58,11 +58,21 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['binhluan_submit'])){
                     <div class="css_danhmuc">
                         Giá: <span><?php echo number_format($result_details['price']) . " " . "VNĐ" ?></span>
                     </div>
+                    <div class="css_danhmuc">
+                        Số lượng: <span ><?php echo number_format($result_details['soluong']) . " " . "Sản phấm" ?></span>
+                    </div>
                     <div class="add-cart">
                         <form action="" method="post">
                             <input type="text" readonly="readonly" class="buyfield" name="quantity" value="1" min="1"
                                 max="10" />
-                            <input type="submit" class="buysubmit" name="submit" value="Thêm vào giỏ hàng" />
+                                <?php 
+                                    if($result_details['soluong'] == 0){
+                                        echo '<span style="color:red;">Hiện tại sản phẩm này đã hết hàng</span>';
+                                    }else{
+                                        echo '<input type="submit" class="buysubmit" name="submit" value="Thêm vào giỏ hàng" />';
+                                    }
+                                ?>
+                            
                         </form>
                         <?php
 								if (isset($AddtoCart)) {

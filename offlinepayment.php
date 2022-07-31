@@ -8,10 +8,11 @@ if ($login_check == false) {
     header('Location:login.php');
 }
 if (isset($_GET['orderid']) && $_GET['orderid']=='order') {
-   
+    
     $customer_id = Session::get('customer_id');
-    $insertOrder = $cat->insertOrder($customer_id);
+    $insertOrder = $cat->insertOrder($customer_id); 
     $insertKH = $cat->insertKH();
+    $updateSoLuongSP = $cat-> updateSoLuongSP();
     header('Location:success.php');
     $delCart = $cat->del_all_data_cart();
 } 

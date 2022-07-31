@@ -20,7 +20,7 @@ include('inc/slider.php');
 					<div class="grid_1_of_4 images_1_of_4" style="width:23.8%;">
 						<a href="#"><img src="admin/uploads/<?php echo $result['hinhanh'] ?>" alt="..." height="120px" style="object-fit: scale-down;" /></a>
 						<h2><?php echo $result['productName'] ?> </h2>
-						<p><?php echo $fm->textShorten($result['product_desc'], 50) ?></p>
+						<!-- <p><?php echo $fm->textShorten($result['product_desc'], 50) ?></p> -->
 						<p><span class="price"><?php echo number_format($result['price']) . " " . "VNĐ" ?></span> </p>
 						<div class="button"><span><a href="details.php?proid=<?php echo $result['productid'] ?>" class="details">Chi tiết</a></span></div>
 					</div>
@@ -44,7 +44,7 @@ include('inc/slider.php');
 					<div class="grid_1_of_4 images_1_of_4" style="width:23.8%; ">
 						<a href="#"><img style="object-fit: scale-down;" src="admin/uploads/<?php echo $result_new['hinhanh'] ?>" alt="..." height="100%" /></a>
 						<h2><?php echo $result_new['productName'] ?> </h2>
-						<p><?php echo $fm->textShorten($result_new['product_desc'], 50) ?></p>
+						<!-- <p><?php echo $fm->textShorten($result_new['product_desc'], 50) ?></p> -->
 						<p><span class="price"><?php echo number_format($result_new['price']) . " " . "VNĐ" ?></span> </p>
 						<div class="button"><span><a href="details.php?proid=<?php echo $result_new['productid'] ?>" class="details"> Chit tiết</a></span></div>
 					</div>

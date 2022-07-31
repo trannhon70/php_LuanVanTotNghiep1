@@ -27,7 +27,7 @@
 					<th>Hình ảnh</th>
 					<th>Danh mục </th>
 					<th>Thương hiệu</th>
-					
+					<th>Số lượng SP</th>
 					<th>Giá</th>
 					<th>Tình trạng</th>
 					<th>Thao tác</th>
@@ -48,6 +48,7 @@
 					<td class="center"><img src="uploads/<?php echo $result['hinhanh'];?>" alt="..." width="90px" height="70px" > </td>
 					<td class="center"> <?php echo $result['catName'];?></td>
 					<td class="center"> <?php echo $result['brandName'];?></td>
+					<td class="center"> <?php echo $result['soluong'];?></td>
 					
 					<td class="center"> <?php echo number_format($result['price'],0,'.',' ') ;?> VNĐ</td>
 					<td class="center"> <?php 

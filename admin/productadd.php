@@ -85,10 +85,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
                             <label>Giá</label>
                         </td>
                         <td>
-                            <input type="text" name="price" placeholder="Enter Price..." class="medium" />
+                            <input type="number" name="price" placeholder="Enter Price..." class="medium" />
                         </td>
                     </tr>
-
+                    <tr>
+                        <td>
+                            <label>Số lượng</label>
+                        </td>
+                        <td>
+                            <input type="number" name="soluong" placeholder="Enter Số lượng..." class="medium" />
+                        </td>
+                    </tr>
                     <tr>
                         <td>
                             <label>Hình ảnh </label>

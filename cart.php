@@ -11,8 +11,9 @@ if (isset($_GET['cartid'])) {
 }
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
 	$cartid = $_POST['cartid'];
+	$productid = $_POST['productid'];
 	$quantity = $_POST['quantity'];
-	$update_quantity_cart = $cat->update_quantity_cart($quantity, $cartid);
+	$update_quantity_cart = $cat->update_quantity_cart($quantity, $cartid,$productid);
 	if ($quantity <= 0) {
 		$delcart = $cat->del_product_cart($cartid);
 	}
@@ -60,8 +61,9 @@ if (!isset($_GET['id'])) {
 								<td><?php echo number_format($result['price']) . " " . "VNĐ" ?></td>
 								<td>
 									<form action="" method="post">
+										<input type="hidden" name="productid" value="<?php echo $result['productid'] ?>" />
 										<input type="hidden" name="cartid" value="<?php echo $result['cartid'] ?>" />
-										<input type="number" name="quantity" min="1" max="10" value="<?php echo $result['quantity'] ?>" />
+										<input type="number" name="quantity" min="1"  value="<?php echo $result['quantity'] ?>" />
 										<input type="submit" name="submit" value="Cập nhật" />
 									</form>
 								</td>
