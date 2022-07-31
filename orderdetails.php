@@ -65,9 +65,12 @@ include('inc/header.php');
                                         echo number_format($total) . " " . "VNĐ" ?></td>
                                 </tr>
                             <?php
+                            $subtotal += $total;
+							$qty = $qty + $result['quantity'];
                                 }
                             } ?>
                         </table>
+                        <div style="padding: 21px 10px;text-align: center;font-size: 20px;">Tổng số tiền cho đơn hàng <span style="color: red;font-weight: 600;"><?php echo $qty ?></span> sản phẩm là : <i style="color: red;font-weight: 600;"><?php echo number_format($subtotal,0,'.',' ') ?> VNĐ</i></div>
                     </div>
                 </div>
             </div>
