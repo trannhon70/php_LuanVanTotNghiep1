@@ -1,6 +1,5 @@
 <?php
-include('inc/header.php');
-
+    include('inc/header.php');
 ?>
 <?php
 
@@ -12,6 +11,7 @@ if ($login_check) {
 <?php
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
+    // $addNewAccount = $cat->addNewAccount();
 	$insertCustomers = $cat->insert_customers($_POST);
 }
 ?>
@@ -80,13 +80,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
                     <div class="col-12 col-lg-6">
                         <input class="form-control col-12" type="text" name="address" placeholder="Địa chỉ">
                     </div>
-                    <div class="col-12 col-lg-6">
-                        <select placeholder="Chọn quốc gia" class="form-control col-12" id="country" name="country">
-                            <!-- <option class="form-control col-12" value="null">Chọn quốc gia</option> -->
-                            <option class="form-control col-12" value="Việt Nam">Việt Nam</option>
-
-                        </select>
-                    </div>
                 </div>
 
                 <div class="row">
@@ -101,7 +94,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
                 </div>
             </table>
             <div class="button_register">
-                <button type="submit" name="submit" >Tạo tài khoản</button>
+                <button type="submit" name="submit">Tạo tài khoản</button>
             </div>
             <div class="clear"></div>
         </form>

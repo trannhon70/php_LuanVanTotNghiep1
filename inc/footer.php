@@ -1,55 +1,39 @@
 </div>
-<footer>
+    <footer class="footer">
         <div class="container">
-            <div class="footer-1 line" data-aos="fade-right" data-aos-duration="1050">
-                <h2>About Us</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</p>
-                <ul class="social">
-                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                </ul>
-            </div>
-            <div class="footer-2 line" data-aos="fade-right" data-aos-duration="1030">
-                <h2>Quick Links</h2>
-                <ul>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Product</a></li>
-                    <li><a href="#">Gallery</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-2 line" data-aos="fade-right" data-aos-duration="1010">
-                <h2>Product Links</h2>
-                <ul>
-                    <li><a href="#">Clothing</a></li>
-                    <li><a href="#">Household</a></li>
-                    <li><a href="#">Kids</a></li>
-                    <li><a href="#">Stationery</a></li>
-                    <li><a href="#">Electronics</a></li>
-                </ul>
-            </div>
-            <div class="footer-3 line" data-aos="fade-right" data-aos-duration="990">
-                <h2>Contact Info</h2>
-                <li>
-                    <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
-                    <span>132, New East Lane <br>London, United Kindom</span>
-                </li>
-                <li>
-                    <span><i class="fa fa-volume-control-phone" aria-hidden="true"></i></span>
-                    <span><a href="#">+1 2234 56789</a></span>
-                </li>
-                <li>
-                    <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
-                    <span><a href="#">contactus@email.com</a></span>
-                </li>
+            <div class="row">
+                <div class="col-12 col-lg-12 footer__item">
+                    <img src="images/logoMain.png"/>
+                </div>
+                <div class="col-6 col-lg-6 footer__item">
+                    <div class="footer__item-wrap">
+                        <h2>About Us</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</p>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-6 footer__item">
+                    <div class="footer__item-wrap">
+                        <h2>Contact Info</h2>
+                        <li>
+                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                            <span>2225 Phạm Thế Hiển, phường 6, quận 8, thành phố Hồ Chí Minh</span>
+                        </li>
+                        <li>
+                            <i class="fa fa-volume-control-phone" aria-hidden="true"></i>
+                            <a href="#">+84 789667974</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                            <a href="#">truongthien2411@email.com</a>
+                        </li>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
-    <div class="copyright">
+    <!-- <div class="copyright">
         <p>Copyright &copy; 2022. All Right Reserved.</p>
-    </div>
+    </div> -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
   AOS.init();
@@ -71,7 +55,9 @@ $(document).ready(function() {
 
 });
 </script>
-<a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"></span></a>
+<a href="#" id="toTop" style="display: block;">
+    <span id="toTopHover" style="opacity: 1;"></span>
+</a>
 <link href="css/flexslider.css" rel='stylesheet' type='text/css' />
 <script defer src="js/jquery.flexslider.js"></script>
 <script type="text/javascript">
@@ -102,6 +88,8 @@ $("select").click(function() {
 
 
  </script>
+ <!-- <script src="js/style.js"></script> -->
+ <script src="js/style1.js"></script>
 </body>
 
 </html>

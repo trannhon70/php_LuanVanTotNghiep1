@@ -749,6 +749,7 @@ class category
             }
         }
     }
+    
 
     // Đặt mua sản phẩm 
     public function get_product_cart()
@@ -758,6 +759,8 @@ class category
         $result = $this->db->select($query);
         return $result;
     }
+
+
     //cập nhật giỏ hàng
     public function update_quantity_cart($quantity, $cartid, $productid)
     {
@@ -946,6 +949,8 @@ class category
             
         }
     }
+
+
     //Đăng ký tài khoản người dùng
     public function insert_customers($data)
     {
@@ -954,7 +959,7 @@ class category
         $zipcode = mysqli_real_escape_string($this->db->link, $data['zipcode']);
         $email = mysqli_real_escape_string($this->db->link, $data['email']);
         $address = mysqli_real_escape_string($this->db->link, $data['address']);
-        $country = mysqli_real_escape_string($this->db->link, $data['country']);
+        $country = "Việt Nam";
         $phone = mysqli_real_escape_string($this->db->link, $data['phone']);
         $password = mysqli_real_escape_string($this->db->link, md5($data['password']));
 
@@ -1079,6 +1084,7 @@ class category
         $query = "INSERT INTO tbl_donhang(customer_id,time, status) VALUE('$customer_id', '$time', '0') ";
         $result = $this->db->update($query);
     }
+
     //update lại số lượng sản phẩm trong product
     public function updateSoLuongSP(){
         $sid = session_id();       

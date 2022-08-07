@@ -24,11 +24,20 @@ if (!isset($_GET['id'])) {
 	echo "<meta http-equiv='refresh' content='0;URL=?id=live'>";
 }
 ?>
-<div class="main">
-	<div class="content">
-		<div class="cartoption">
-			<div class="cartpage">
-				<h2 style="width:100%;">Giỏ hàng của bạn</h2>
+<div class="main cart2">
+	<div class="content container">
+		<div class="row cart2__breadcrumb">
+			<div class="col-12 col-md-12 col-lg-12">
+				<a href="index.php" class="breadcrumb__link">Trang chủ</a>
+                <span>/</span>
+                <a href="cart.php?id=live" class="breadcrumb__link active">Giỏ hàng</a>
+			</div>
+		</div>
+		<div class="cartoption row">
+			<!-- <div class="cartpage"> -->
+				<div class="col-12 headingMain">
+					Giỏ hàng của bạn</h2>
+				</div>
 				<?php
 				if (isset($update_quantity_cart)) {
 					echo $update_quantity_cart;
@@ -64,12 +73,12 @@ if (!isset($_GET['id'])) {
 										<input type="hidden" name="productid" value="<?php echo $result['productid'] ?>" />
 										<input type="hidden" name="cartid" value="<?php echo $result['cartid'] ?>" />
 										<input type="number" name="quantity" min="1"  value="<?php echo $result['quantity'] ?>" />
-										<input type="submit" name="submit" value="Cập nhật" />
+										<button class="button__primary warning" type="submit" name="submit" >Cập nhật</button>
 									</form>
 								</td>
 								<td><?php $total = $result['price'] * $result['quantity'];
 									echo number_format($total) . " " . "VNĐ" ?></td>
-								<td><a onclick="return confirm('bạn có chắc là bạn muốn xóa sản phẩm <?php echo $result['productName']; ?>')" href="?cartid=<?php echo $result['cartid'] ?>">Xóa</a></td>
+								<td><button class="button__primary delete" onclick="return confirm('bạn có chắc là bạn muốn xóa sản phẩm <?php echo $result['productName']; ?>')">Xóa</button></td>
 							</tr>
 
 					<?php $subtotal += $total;
@@ -93,15 +102,15 @@ if (!isset($_GET['id'])) {
 				<?php } else {
 					echo "Giỏ hàng của bạn chưa có sản phẩm nào !";
 				} ?>
-			</div>
+			<!-- </div> -->
 			<div class="shopping">
 				<div class="shopleft">
-					<a class="tieptucMS" href="index.php"> Tiếp tục mua sắm</a>
+					<!-- <a class="tieptucMS button__primary success" href="index.php"> Tiếp tục mua sắm</a> -->
 					<?php
 					$check_cart = $cat->check_cart();
 					if ($check_cart) {
 					?>
-						<a class="tieptucMS" href="payment.php">Tiến hành thanh toán</a>
+						<a class="tieptucMS button__primary success" href="payment.php">Tiến hành thanh toán</a>
 					<?php } else {
 						echo "";
 					} ?>

@@ -1,0 +1,225 @@
+.main {
+
+    .content {
+        padding: 30px 0;
+        background-color: $primary-color;
+
+        .content_top, .content_bottom {
+            // background-color: $secondary-color !important;
+            // background-color: red !important;
+            background-color: transparent;
+            padding: 0 20px;
+
+            .heading {
+                width: 100%;
+                border-radius: 30px;
+                background-color: $secondary-color !important;
+                padding: 15px 20px;
+                display: flex;
+                align-items: center;
+                // box-shadow: 0 15px 5px 0 rgba(0,0,0,0.1);
+                filter: drop-shadow(0 5px 10px rgba(0,0,0,0.4));
+
+                h3 {
+                    font-size: 15px;
+                    margin: 0;
+                }
+            }
+        }
+
+        .group {
+            padding: 20px 0;
+
+            .container {
+                border-radius: 10px;
+    
+                .row {
+                    margin: 0;
+    
+                    .product__item {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 10px;
+                        
+                        .product__content {
+                            background-color: #fff;
+                            border-radius: 10px;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+                            width: 100%;
+                            padding: 10px;
+                            transition: all .5s;
+                            position: relative;
+                            overflow: hidden;
+
+                            &:hover {
+                                box-shadow: 0 0 5px 10px rgba(84, 52, 52, 0.1);
+                                transform: translateY(-5px);
+                            }
+
+                            &:hover .content__before {
+                                width: 100%;
+                                display: block;
+                            }
+
+                            a {
+                                display: inline-block;
+                                width: 100%;
+
+                                img {
+                                    width: 100%;
+                                    height: 200px;
+                                    object-fit: contain !important;
+                                }
+                            }
+
+                            .content__after {
+                                position: absolute;
+                                top: 0;
+                                left: 0px;
+                                width: 50px;
+                                height: 50px;
+                                background-color: rgb(255, 208, 0);
+                                color: $secondary-color;
+                                // clip-path: polygon(0 0, 100% 0%, 100% 67%, 47% 100%, 0 69%);
+                                // clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+                                clip-path: polygon(0 17%, 62% 17%, 100% 52%, 62% 84%, 0 84%);
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+
+                                i {
+                                    transform: translateX(-30%);
+                                }
+                            }
+
+                            .content__before {
+                                width: 0%;
+                                height: 100%;
+                                position: absolute;
+                                border-radius: 10px;
+                                top: 0;
+                                left: 0;
+                                transition: all .5s;
+                                background-color: rgba(0,0,0,0.65);
+                                display: none;
+                                animation-name: fadeOn;
+                                animation-duration: .3s;
+                                animation-timing-function: ease-in;
+                                animation-fill-mode: forwards;
+
+                                .content__before-wrap {
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: center;
+                                    justify-content: center;
+                                    width: 100%;
+                                    height: 100%;
+
+                                    .content__text {
+                                        display: flex;
+                                        align-items: center;
+                                        animation-name: fadeOnContent;
+                                        animation-duration: .5s;
+                                        animation-timing-function: ease-in;
+                                        animation-fill-mode: forwards;
+
+                                        img {
+                                            width: 150px;
+                                            height: 100%;
+                                        }
+
+                                        p {
+                                            color: #fff;
+                                        }
+                                    }
+
+                                    img, .button {
+                                        animation-name: fadeOnContent;
+                                        animation-duration: .5s;
+                                        animation-timing-function: ease-in;
+                                        animation-fill-mode: forwards;
+                                    }
+    
+                                    .button {
+                                        
+                                        a {
+                                            display: inline-block;
+                                            padding: 7px 20px;
+                                            width: max-content;
+                                            background-color: $primary-color;
+                                            border-radius: 10px;
+                                            margin-top: 25px;
+                                            color: $secondary-color;
+                                            transition: all .3s;
+
+                                            &:hover {
+                                                text-decoration: none;
+                                                background-color: $secondary-color;
+                                                color: $primary-color;
+                                                transform: translateY(-3px);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .content_bottom {
+            margin: 0;
+        }
+
+        .phanTrang {
+            display: flex;
+            justify-content: center;
+
+            .phanTrang--button {
+                width: 40px;
+                height: 40px;
+                background-color: $secondary-color;
+                color: $primary-color;
+                border-radius: 50%;
+                border: 1px solid transparent;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition:  all .3s;
+
+                &:hover {
+                    background-color: transparent;
+                    border-color: $secondary-color;
+                    color: $secondary-color;
+                }
+            }
+        }
+    }
+}
+
+
+@keyframes fadeOn {
+    from {
+        transform: translateX(-50%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeOnContent {
+    from {
+        opacity: 0;
+        transform: translateX(-30%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

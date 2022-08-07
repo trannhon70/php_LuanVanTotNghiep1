@@ -1,0 +1,51 @@
+// Start footer 
+.footer {
+    background: $primary-color !important;
+    box-shadow: none;
+    padding: 0 30px 30px 30px;
+
+    .container {
+
+        .row {
+            padding: 0 30px;
+
+            .footer__item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                // justify-content: center;
+
+                &:first-child {
+                    margin-bottom: 60px;
+                    border-bottom: 1px solid $secondary-color;
+                }
+
+                h2 {
+                    color: $secondary-color;
+                    margin-bottom: 20px;
+                }
+
+                li {
+                    list-style: none;
+                    margin: 5px 0;
+
+                    i {
+                        margin-right: 10px;
+                        color: $secondary-color;
+                    }
+
+                    a {
+                        color: $secondary-color !important;
+                    }
+                }
+            }
+        }
+    }
+}
+// End footer
+
+// Start Scroll to top
+#toTop {
+    background-image: none !important;
+} 
+// End scroll to top

@@ -1,0 +1,238 @@
+// Start detail
+.detail {
+    background-color: $primary-color;
+
+    .detail__wrap {
+
+        .detail__row {
+
+            .detail__breadcrumb {
+                margin: 20px 0;
+                // background-color: #fff;
+                // border-radius: 20px;
+                // padding: 10px 20px;
+                
+                .breadcrumb__link {
+                    color: #000;
+                    transition: all .3s;
+
+                    &.active {
+                        color: $secondary-color;
+                        font-weight: 500;
+                    }
+
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+
+                span {
+                    margin: 0 7px;
+                }
+            }
+
+            .detail__content {
+                padding: 10px;
+
+                .detail__content-wrap {
+                    background-color: #fff;
+                    border-radius: 10px;
+                    padding: 10px;
+
+                    .content--item {
+
+                        img {
+                            transform: translateY(-40px);
+                            height: 100%;
+                        }
+                    }
+
+                    .desc {
+                        font-size: 13px;
+
+                        .css_danhmuc {
+                            font-size: 1rem;
+                            display: flex;
+                            align-items: center;
+                            padding: 0;
+                            
+                            &.price {
+                                border: 1px solid #eaeaea;
+                                border-color: #eaeaea  transparent #eaeaea transparent;
+                                margin: 10px 0;
+                            }
+
+                            .detail__name {
+                                color: #000;
+                                font-size: 1.4rem;
+                                padding-left: 0;
+                                font-weight: 700;
+                            }
+
+                            p {
+                                font-size: 13px;
+                                color: #000;
+                                font-weight: 500;
+                                margin-bottom: 0;
+                            }
+
+                            span {
+                                font-size: 13px;
+                                font-weight: 400;
+                                transform: translateY(-1px);
+                                color: $secondary-color;
+                            }
+
+                            .detail__price {
+                                font-size: 25px;
+                                font-weight: 700;
+                                letter-spacing: 1px;
+                                padding-left: 0;
+                            }
+                        }
+
+                        .add-cart {
+
+                            .buysubmit {
+                                font-size: 13px;
+                                background-color: $secondary-color;
+                                transition: all .3s;
+                                border: 1px solid transparent;
+                                margin-right: 10px;
+
+                                i {
+                                    margin-right: 5px;
+                                }
+
+                                &.sosanh {
+                                    background-color: #fa5757;
+
+                                    &:hover {
+                                        color: #fa5757;
+                                        border-color: #fa5757;
+                                    }
+                                }
+
+                                &.yeuthich {
+                                    background-color: #f0324e;
+
+                                    &:hover {
+                                        color: #f0324e;
+                                        border-color: #f0324e;
+                                    }
+                                }
+                                
+                                &:hover {
+                                    background-color: transparent;
+                                    color: $secondary-color;
+                                    border-color: $secondary-color;
+                                    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+                                }
+                            }
+                        }
+                    }
+
+                    .product-desc {
+                        padding-top: 0;
+
+                        .MoTaChiTiet_content {
+                            border: none;
+                            
+                            p {
+                                color: #000;
+                            }
+                        }
+                    }
+
+                    .binhluan_container {
+                        border: none;
+                        height: max-content;
+                        
+                        .binhluan_heading {
+                            color: var(--color-white);
+                            font-weight: 600;
+                            padding: 5px 20px;
+                            text-align: center;
+                            width: max-content;
+                        }
+
+                        .binhluan {
+
+                            .binhluan_ten {
+                                width: 200px;
+                            }
+
+                            .binhluan_ten, .binhluan_noidung {
+                                border: 1px solid #bdbdbd;
+                                font-size: 13px;
+                                outline-color: $secondary-color;
+                                background-color: transparent;
+                                padding: 10px 20px;  
+                                margin-right: 10px;
+                            }
+
+                            .binhluan_button {
+                                border-radius: 10px;
+                                background-color: $secondary-color;
+                                transition: all .3s;
+                                border: 1px solid transparent;
+                                padding: 8px 30px;
+
+                                &:hover {
+                                    background-color: transparent;
+                                    color: $secondary-color;
+                                    border-color: $secondary-color;
+                                    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+                                }
+                            }
+                        }
+                    }
+
+
+                    .danhMuc--list {
+                        padding: 10px 0;
+
+                        .danhMuc--item {
+                            padding: 10px 20px;
+                            position: relative;
+                            transition: all .3s;
+                            border-bottom: 1px solid transparent;
+
+                            &:hover {
+                                border-bottom: 1px solid $secondary-color;
+                            }
+
+                            &:hover a {
+                                color: $secondary-color;
+                            }
+
+                            &:hover a i {
+                                transform: translateY(-5px);
+                            }
+
+                            a {
+                                color: #000;
+                                display: flex;
+                                align-items: center;
+                                transition:  all .3s;
+
+                                &:hover {
+                                    text-decoration: none;
+                                }
+
+                                i {
+                                    width: 40px;
+                                    text-align: center;
+                                    margin-right: 10px;
+                                    font-size: 30px;
+                                    transition:  all .3s;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// End detail

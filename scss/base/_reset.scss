@@ -1,0 +1,58 @@
+* {
+    font-size: 14px;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.headingMain {
+    background-color: $secondary-color;
+    border-radius: 20px;
+    font-size: 17px;
+    color: #fff;
+    padding: 10px 20px;
+    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.4));
+}
+
+.button__primary {
+    background-color: $secondary-color;
+    color: #fff;
+    border: 1px solid transparent;
+    transition: all .3s;
+    border-radius: 10px;
+    padding: 7px 10px;
+
+    &:hover {
+        color: $secondary-color;
+        border-color: $secondary-color;
+        background-color: transparent;
+    }
+
+    &.delete {
+        background-color: #fc1b41;
+
+        &:hover {
+            color: #fc1b41;
+            background-color: transparent;
+            border-color: #fc1b41;
+        }
+    }
+
+    &.warning {
+        background-color: $warning-color;
+
+        &:hover {
+            color: $warning-color;
+            background-color: transparent;
+            border-color: $warning-color;
+        }
+    }
+
+    &.success {
+        background-color: #03c467;
+
+        &:hover {
+            color: #03c467;
+            background-color: transparent;
+            border-color: #03c467;
+        }
+    }
+}
