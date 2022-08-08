@@ -1013,6 +1013,14 @@
   overflow: hidden;
 }
 
+.profile .container .row .tblone tr td:first-child, .profile .container .row .tblone tr td:last-child {
+  width: 48%;
+}
+
+.profile .container .row .tblone tr td:nth-child(2) {
+  width: 2%;
+}
+
 .profile .container .row .tblone tr td a:hover {
   text-decoration: none;
 }

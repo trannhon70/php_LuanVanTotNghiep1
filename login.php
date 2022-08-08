@@ -84,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
                                 </div>
                                 <div class="col-12 col-lg-6">
                                     <input class="form-control col-12"
-                                        type="email" name="Email" placeholder="Email">
+                                        type="email" name="email" placeholder="Email">
                                 </div>
                             </div>
 

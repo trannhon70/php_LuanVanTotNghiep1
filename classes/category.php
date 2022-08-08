@@ -959,11 +959,11 @@ class category
         $zipcode = mysqli_real_escape_string($this->db->link, $data['zipcode']);
         $email = mysqli_real_escape_string($this->db->link, $data['email']);
         $address = mysqli_real_escape_string($this->db->link, $data['address']);
-        $country = "Việt Nam";
+        // $country = "Việt Nam";
         $phone = mysqli_real_escape_string($this->db->link, $data['phone']);
         $password = mysqli_real_escape_string($this->db->link, md5($data['password']));
 
-        if ($name == "" || $city == "" || $zipcode == "" || $email == "" || $address == "" || $country == "" || $phone == "" || $password == "") {
+        if ($name == "" || $city == "" || $zipcode == "" || $email == "" || $address == ""  || $phone == "" || $password == "") {
             $alert = "<span style='color:red;'>Các trường không được bỏ trống !</span>";
             return $alert;
         } else {
@@ -975,7 +975,7 @@ class category
                 $alert = "<span style='color:red'>email hoặc số điện thoại đã có người đăng ký , bạn vui lòng đăng ký lại </span>";
                 return $alert;
             } else {
-                $query = "INSERT INTO tbl_customer (name,address,city,country,zipcode,phone,email,password) VALUE('$name','$address','$city','$country','$zipcode','$phone','$email' ,'$password') ";
+                $query = "INSERT INTO tbl_customer (name,address,city,country,zipcode,phone,email,password) VALUE('$name','$address','$city','Việt Nam','$zipcode','$phone','$email' ,'$password') ";
                 $result = $this->db->insert($query);
                 if ($result) {
                     $alert = "<span style='color:blue;'>Tạo tài khoản thành công!!</span>";
