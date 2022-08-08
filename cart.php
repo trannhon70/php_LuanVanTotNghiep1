@@ -78,7 +78,7 @@ if (!isset($_GET['id'])) {
 								</td>
 								<td><?php $total = $result['price'] * $result['quantity'];
 									echo number_format($total) . " " . "VNĐ" ?></td>
-								<td><button class="button__primary delete" onclick="return confirm('bạn có chắc là bạn muốn xóa sản phẩm <?php echo $result['productName']; ?>')">Xóa</button></td>
+								<td><a class="button__primary delete" onclick="return confirm('bạn có chắc là bạn muốn xóa sản phẩm <?php echo $result['productName']; ?>')" href="?cartid=<?php echo $result['cartid'] ?>">Xóa</a></td>
 							</tr>
 
 					<?php $subtotal += $total;

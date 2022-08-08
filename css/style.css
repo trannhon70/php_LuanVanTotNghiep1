@@ -1529,11 +1529,7 @@ table.tblone input[type="submit"] {
   font-size: 14px;
   padding: 1px 5px;
 }
-table.tblone a {
-  color: #fe5800;
-  font-weight: bold;
-  text-decoration: none;
-}
+
 
 .shopping {
   margin-top: 30px;

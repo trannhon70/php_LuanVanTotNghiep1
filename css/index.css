@@ -890,4 +890,147 @@
   background-color: #883f39;
   font-size: 16px;
 }
+
+.loginMain {
+  background-color: #f7f0e8;
+}
+
+.loginMain .container .loginMain__row .loginMain__breadcrumb {
+  margin: 20px 0;
+}
+
+.loginMain .container .loginMain__row .loginMain__breadcrumb .breadcrumb__link {
+  color: #000;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.loginMain .container .loginMain__row .loginMain__breadcrumb .breadcrumb__link.active {
+  color: #883f39;
+  font-weight: 500;
+}
+
+.loginMain .container .loginMain__row .loginMain__breadcrumb .breadcrumb__link:hover {
+  text-decoration: none;
+}
+
+.loginMain .container .loginMain__row .loginMain__breadcrumb span {
+  margin: 0 7px;
+}
+
+.loginMain .container .row .login1 {
+  padding: 0 10px;
+  margin-bottom: 30px;
+}
+
+.loginMain .container .row .login1 .login__wrap {
+  border-radius: 20px;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.loginMain .container .row .login1 .login__wrap .headingMain {
+  margin-bottom: 20px;
+}
+
+.loginMain .container .row .login1 .login__wrap form input {
+  margin: 5px 0;
+  outline-color: #883f39;
+  border-radius: 10px;
+  padding: 7px 15px;
+  border: none;
+  border-bottom: 1px solid #cccccc;
+}
+
+.loginMain .container .row .login1 .login__wrap form .forgotPassword {
+  margin: 10px 0 0 10px;
+}
+
+.loginMain .container .row .login1 .login__wrap form .forgotPassword a {
+  color: #000;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.loginMain .container .row .login1 .login__wrap form .forgotPassword a:hover {
+  color: #883f39;
+}
+
+.loginMain .container .row .login1 .login__wrap form .button_login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.loginMain .container .row .register {
+  padding: 0 10px;
+}
+
+.loginMain .container .row .register .register__wrap {
+  border-radius: 20px;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.loginMain .container .row .register .register__wrap .headingMain {
+  margin-bottom: 20px;
+}
+
+.loginMain .container .row .register .register__wrap form .form-control:focus {
+  border-color: #883f39 !important;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.loginMain .container .row .register .register__wrap form input {
+  margin: 5px 0;
+  outline-color: #883f39 !important;
+  border-radius: 10px;
+  padding: 7px 15px;
+  border: none;
+  border-bottom: 1px solid #cccccc;
+}
+
+.loginMain .container .row .register .register__wrap form .button_register {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.profile {
+  background-color: #f7f0e8;
+}
+
+.profile .container .row .tblone {
+  margin-top: 10px;
+  border-radius: 20px !important;
+  overflow: hidden;
+}
+
+.profile .container .row .tblone tr td a:hover {
+  text-decoration: none;
+}
+
+.profile .container .row .profile__submit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.profile .container .row .profile__submit .button__submit {
+  display: inline-block;
+}
+
+.profile .container .row .profile__submit .button__submit:hover {
+  text-decoration: none;
+}
 /*# sourceMappingURL=index.css.map */

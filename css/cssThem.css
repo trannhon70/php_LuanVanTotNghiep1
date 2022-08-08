@@ -25,20 +25,7 @@
     text-align: center;
   }
 
-  table.tblone a {
-    color: var(--color-white);
-    font-weight: bold;
-    text-decoration: none;
-    background-color: var(--background-button);
-    border-radius: 10px;
-    font-size: 15px;
-    border: none;
-    padding: 5px 10px;
-  }
-  table.tblone a:hover{
-    color: var(--color-white);
-    background-color: var(--background-button-hover);
-  }
+
   table.tblone img {
     height: 50px;
     width: 50px;
@@ -167,7 +154,7 @@ a.submit_order:hover {
 	width:100%;
 }
 
-.button_login > button{
+/* .button_login > button{
   background-color: var(--background-button);
   color: var(--color-white);
   padding: 10px 15px;
@@ -176,12 +163,12 @@ a.submit_order:hover {
   font-size: 18px;
   margin-top: 20px;
   cursor: pointer;
-}
+} */
 
-.button_login > button:hover{
+/* .button_login > button:hover{
   background-color: var(--background-button-hover);
   transition: 0.5s;
-}
+} */
 
 .register_account_login{
   background: #fff none repeat scroll 0 0;
@@ -202,7 +189,7 @@ a.submit_order:hover {
   width: 100%;
   text-align: center;
 }
-.button_register >button{
+/* .button_register >button{
   background-color: var(--background-button);
   color: var(--color-white);
   padding: 10px 15px;
@@ -216,7 +203,7 @@ a.submit_order:hover {
 .button_register >button:hover{
   background-color: var(--background-button-hover);
   transition: 0.5s;
-}
+} */
 
 /* detail */
 .css_danhmuc{

@@ -21,17 +21,14 @@ if ($login_check == false) {
 // }
 ?>
 
-<div class="main">
-    <div class="content">
-        <div class="section group">
-            <div class="content_top">
-                <div class="heading">
-                    <h3>Thông tin cá nhân</h3>
-                </div>
-                <div class="clear"></div>
+<div class="profile">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-12 p-0">
+                <div class="headingMain">Thông tin cá nhân</div>
             </div>
 
-            <table class="tblone">
+            <table class="tblone col-12 col-md-12">
                 <?php 
                 $id = Session::get('customer_id');
                     $get_customers = $cat->show_customer($id);
@@ -70,14 +67,18 @@ if ($login_check == false) {
                     <td>:</td>
                     <td><?php echo $result['phone'] ?></td>
                 </tr>
-                <tr>
-                    <td  colspan="3"><a href="editprofile.php">Chỉnh sửa Thông tin cá nhân</a></td>
-
-                </tr>
+                <!-- <tr>
+                    <td colspan="3">
+                        <a href="editprofile.php" class="button__primary">Chỉnh sửa thông tin cá nhân</a>
+                    </td>
+                </tr> -->
 
                 <?php }
                     } ?>
             </table>
+            <div class="col-12 col-md-12 profile__submit">
+                <a href="editprofile.php" class="button__primary button__submit">Chỉnh sửa thông tin cá nhân</a>
+            </div>
         </div>
     </div>
 </div>

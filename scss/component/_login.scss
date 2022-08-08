@@ -1,0 +1,128 @@
+// Start login
+.loginMain {
+    background-color: $primary-color;
+
+    .container {
+
+        .loginMain__row {
+
+            .loginMain__breadcrumb {
+                margin: 20px 0;
+
+                .breadcrumb__link {
+                    color: #000;
+                    transition: all .3s;
+
+                    &.active {
+                        color: $secondary-color;
+                        font-weight: 500;
+                    }
+
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+
+                span {
+                    margin: 0 7px;
+                }
+            
+            }
+        }
+
+        .row {
+
+            // Start login
+            .login1 {
+                padding: 0 10px;
+                margin-bottom: 30px;
+
+                .login__wrap {
+                    border-radius: 20px;
+                    padding: 20px;
+                    background-color: #fff;
+
+                    .headingMain {
+                        margin-bottom: 20px;
+                    }
+
+                    form {
+
+                        input {
+                            margin: 5px 0;
+                            outline-color: $secondary-color;
+                            border-radius: 10px;
+                            padding: 7px 15px;
+                            // border-color: #cccccc;
+                            border: none;
+                            border-bottom: 1px solid #cccccc;
+                        }
+
+                        .forgotPassword {
+                            margin: 10px 0 0 10px;  
+
+                            a {
+                                color: #000;
+                                transition: all .3s;
+
+                                &:hover {
+                                    color: $secondary-color;
+                                }
+                            }
+                        }
+
+                        .button_login {
+                            display: flex;
+                            justify-content: flex-end;
+
+                            button {
+
+                            }
+                        }
+                    }
+                }
+            }
+            // End login
+
+            // Start register
+            .register {
+                padding: 0 10px;
+
+                .register__wrap {
+                    border-radius: 20px;
+                    padding: 20px;
+                    background-color: #fff;
+
+                    .headingMain {
+                        margin-bottom: 20px;
+                    }
+
+                    form {
+
+                        .form-control:focus {
+                            border-color: $secondary-color !important;
+                            box-shadow: none;
+                        }
+
+                        input {
+                            margin: 5px 0;
+                            outline-color: $secondary-color !important;
+                            border-radius: 10px;
+                            padding: 7px 15px;
+                            // border-color: #cccccc;
+                            border: none;
+                            border-bottom: 1px solid #cccccc;
+                        }
+
+                        .button_register {
+                            display: flex;
+                            justify-content: flex-end;
+                        }
+                    }
+                }
+            }
+            // End register
+        }
+    }
+}
+// End login

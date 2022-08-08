@@ -1,0 +1,44 @@
+// Start profile
+.profile {
+    background-color: $primary-color;
+
+    .container {
+
+        .row {
+
+            .tblone {
+                margin-top: 10px;
+                border-radius: 20px !important;
+                overflow: hidden;
+
+                tr {
+
+                    td {
+
+                        a {
+                            // transform: translateX(200px);
+
+                            &:hover {
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .profile__submit {
+                display: flex;
+                justify-content: center;
+                
+                .button__submit {
+                    display: inline-block;
+                   
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+}
+// End profile
