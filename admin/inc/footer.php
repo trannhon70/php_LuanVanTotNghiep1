@@ -19,5 +19,6 @@ CKEDITOR.replace('catDesc', {
 });
 
  </script>
+
 </body>
 </html>

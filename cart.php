@@ -63,7 +63,7 @@ if (!isset($_GET['id'])) {
 									<form action="" method="post">
 										<input type="hidden" name="productid" value="<?php echo $result['productid'] ?>" />
 										<input type="hidden" name="cartid" value="<?php echo $result['cartid'] ?>" />
-										<input type="number" name="quantity" min="1"  value="<?php echo $result['quantity'] ?>" />
+										<input type="number" name="quantity" min="0"  value="<?php echo $result['quantity'] ?>" />
 										<input type="submit" name="submit" value="Cập nhật" />
 									</form>
 								</td>

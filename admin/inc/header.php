@@ -40,6 +40,8 @@
 		    setSidebarHeight();
         });
     </script>
+    <!-- chart -->
+    
     <!-- gắn ckeditor -->
     <script src="http://localhost/php_LuanVanTotNghiep/admin/ckeditor/ckeditor.js" charset="utf-8"></script>
     <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
@@ -85,7 +87,7 @@
                 <li class="ic-form-style"><a href="taikhoanND.php"><span>Quản lý tài khoản khách hàng</span></a></li>
 				<!-- <li class="ic-typography"><a href="changepassword.php"><span>Change Password</span></a></li> -->
 				<li class="ic-grid-tables"><a href="donhang.php"><span>Đơn hàng của khách</span></a></li>
-                <!-- <li class="ic-charts"><a href=""><span>Visit Website</span></a></li> -->
+                <li class="ic-charts"><a href="doanhthu.php"><span>Thống kê doanh thu</span></a></li>
             </ul>
         </div>
         <div class="clear">
