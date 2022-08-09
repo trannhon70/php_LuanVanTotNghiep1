@@ -24,10 +24,10 @@ if (!isset($_GET['id'])) {
 	echo "<meta http-equiv='refresh' content='0;URL=?id=live'>";
 }
 ?>
-<div class="main cart2">
-	<div class="content container">
-		<div class="row cart2__breadcrumb">
-			<div class="col-12 col-md-12 col-lg-12">
+<div class="profile">
+	<div class="container">
+		<div class="row profile__row">
+			<div class="col-12 col-md-12 col-lg-12 profile__breadcrumb">
 				<a href="index.php" class="breadcrumb__link">Trang chủ</a>
                 <span>/</span>
                 <a href="cart.php?id=live" class="breadcrumb__link active">Giỏ hàng</a>
@@ -35,9 +35,9 @@ if (!isset($_GET['id'])) {
 		</div>
 		<div class="cartoption row">
 			<!-- <div class="cartpage"> -->
-				<div class="col-12 headingMain">
+				<!-- <div class="col-12 headingMain">
 					Giỏ hàng của bạn</h2>
-				</div>
+				</div> -->
 				<?php
 				if (isset($update_quantity_cart)) {
 					echo $update_quantity_cart;
@@ -72,7 +72,7 @@ if (!isset($_GET['id'])) {
 									<form action="" method="post">
 										<input type="hidden" name="productid" value="<?php echo $result['productid'] ?>" />
 										<input type="hidden" name="cartid" value="<?php echo $result['cartid'] ?>" />
-										<input type="number" name="quantity" min="1"  value="<?php echo $result['quantity'] ?>" />
+										<input type="number" name="quantity" min="1" style="width: 50px !important; min-width: 50px !important"  value="<?php echo $result['quantity'] ?>" />
 										<button class="button__primary warning" type="submit" name="submit" >Cập nhật</button>
 									</form>
 								</td>
@@ -100,7 +100,13 @@ if (!isset($_GET['id'])) {
 						</tr>
 					</table>
 				<?php } else {
-					echo "Giỏ hàng của bạn chưa có sản phẩm nào !";
+					// echo "Giỏ hàng của bạn chưa có sản phẩm nào !";
+					?>
+					<div class="d-flex justify-content-center w-100">
+						<img src="images/not-cart.png" style="width: 300px; height: auto; margin-top: 20px;" class="noCart"/>
+					</div>
+					<?php
+					
 				} ?>
 			<!-- </div> -->
 			<div class="shopping">

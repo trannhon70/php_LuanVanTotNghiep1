@@ -21,16 +21,31 @@ if ($login_check == false) {
 // }
 ?>
 
-<div class="main_payment">
-    <div class="heading_payment">
-        <h3>Phương thức thanh toán</h3>
-</div>
-    <div class="wrapper_method_payment">
-        <h3>Chọn phương thức để thanh toán</h3><br />
-        <a href="offlinepayment.php">Thanh toán khi nhận hàng</a>
-        <a href="onlinepayment.php">Thanh toán online</a><br><br>
-        <a href="cart.php">
-             Quay lại</a>
+<div class="profile">
+    <div class="container">
+        <div class="row profile__row">
+            <div class="col-12 col-md-12 col-lg-12 profile__breadcrumb">
+                <a href="index.php" class="breadcrumb__link">Trang chủ</a>
+                <span>/</span>
+                <a href="cart.php?id=live" class="breadcrumb__link">Giỏ hàng</a>
+                <span>/</span>
+                <a href="payment.php" class="breadcrumb__link active">Chọn phương thức thanh toán</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-12 col-lg-12 payment d-flex justify-content-center mt-5">
+                <div class="wrapper_method_payment">
+                    <a href="offlinepayment.php" class="button__primary success">
+                        <i class="fa-solid fa-truck-fast"></i>
+                        Thanh toán khi nhận hàng
+                    </a>
+                    <a href="onlinepayment.php" class="button__primary warning">
+                        <i class="fa-solid fa-credit-card"></i>
+                        Thanh toán online
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 <?php

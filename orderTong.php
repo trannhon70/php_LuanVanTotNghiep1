@@ -15,12 +15,6 @@ include('inc/header.php');
         $shifted_confirm = $cat->shifted_confirm_donhang($id,$customer_id,$time);
         $update_shifted_confirm=$cat->update_shifted_confirm($time,$customer_id);
     }
-    // if(isset($_GET['delid']) ){
-    //     $id = $_GET['delid'];
-    //     $time = $_GET['time'];
-    //     $price = $_GET['price'];
-    //     $del_shifted = $cat->del_shifted($id,$time,$price);
-    // }
 ?>
 
 <style type="text/css">
@@ -31,56 +25,63 @@ include('inc/header.php');
 }
 </style>
 <form action="" method="post">
-    <div class="main">
-        <div class="content">
-            <div class="section group">
-                <div class="box_left">
-                    <div class="cartpage">
-                        <h2 style="width:100%;">Đơn hàng của bạn</h2>
-                        <table class="tblone">
-                            <tr>
-                                <th >STT</th>
-                                <th>Mã đơn hàng</th>
-                                <th>Ngày/tháng/năm</th>
-                                <th>Thông tin chi tiết đơn hàng</th>                    
-                                <th >Thao tác</th>
+    <div class="profile">
+        <div class="container">
+            <div class="row profile__row">
+                <div class="col-12 col-md-12 col-lg-12 profile__breadcrumb">
+                    <a href="index.php" class="breadcrumb__link">Trang chủ</a>
+                    <span>/</span>
+                    <a href="orderTong.php" class="breadcrumb__link active">Đơn hàng</a>
+                </div>
+            </div>
+            <div class="row">
+                <!-- <div class="col-12 col-md-12 col-lg-12">
+                    <div class="headingMain" style="width:100%;">Đơn hàng của bạn</div>
+                </div> -->
+                <div class="col-12 col-md-12 col-lg-12 p-0">
+                    <table class="tblone">
+                        <tr>
+                            <th >STT</th>
+                            <th>Mã đơn hàng</th>
+                            <th>Thời gian</th>
+                            <th>Thông tin chi tiết đơn hàng</th>                    
+                            <th>Xử lý</th>
 
-                            </tr>
-                            <?php
-                             $customer_id = Session::get('customer_id');
-                            $get_cart_ordered = $cat->show_khachhang_id($customer_id);
-                            if ($get_cart_ordered) {
-                                $subtotal = 0;
-                                $qty = 0;
-                                $i = 0;
-                                while ($result = $get_cart_ordered->fetch_assoc()) {
-                                    $i++;
-                            ?>
-                            <tr>
-                                <td><?php echo $i; ?></td>
-                                <td><?php echo $result['time'] ?></td>
-                                <td><?php echo $result['date'] ?></td>
-                                <td><a href="orderdetails.php?donhangid=<?php echo $result['time'] ?>">Xem chi tiết đơn hàng</a></td>                                
-                                <td>
-                                    <?php
-                                        if($result['status']=='0'){
-                                            echo 'Chờ xử lý';
-                                        }elseif($result['status']=='1'){ 
-                                        ?>
-                                    <!-- <span>Đang vận chuyển</span> -->
-                                   <a href="?statusid=<?php echo $result['id'] ?>&time=<?php echo $result['time'] ?>&customerId=<?php echo $result['customer_id'] ?>">Đã nhận đơn hàng</a>
-                                    <?php
-                                        }elseif($result['status']==2){
-                                            echo 'Đã thanh toán';
-                                        }
+                        </tr>
+                        <?php
+                        $customer_id = Session::get('customer_id');
+                        $get_cart_ordered = $cat->show_khachhang_id($customer_id);
+                        if ($get_cart_ordered) {
+                            $subtotal = 0;
+                            $qty = 0;
+                            $i = 0;
+                            while ($result = $get_cart_ordered->fetch_assoc()) {
+                                $i++;
+                        ?>
+                        <tr>
+                            <td><?php echo $i; ?></td>
+                            <td><?php echo $result['time'] ?></td>
+                            <td><?php echo $result['date'] ?></td>
+                            <td><a href="orderdetails.php?donhangid=<?php echo $result['time'] ?>">Xem chi tiết đơn hàng</a></td>                                
+                            <td>
+                                <?php
+                                    if($result['status']=='0'){
+                                        echo 'Chờ xử lý';
+                                    }elseif($result['status']=='1'){ 
                                     ?>
-                                </td>
-                            </tr>
-                            <?php
-                                }
-                            } ?>
-                        </table>
-                    </div>
+                                <!-- <span>Đang vận chuyển</span> -->
+                            <a href="?statusid=<?php echo $result['id'] ?>&time=<?php echo $result['time'] ?>&customerId=<?php echo $result['customer_id'] ?>">Đã nhận đơn hàng</a>
+                                <?php
+                                    }elseif($result['status']==2){
+                                        echo 'Đã thanh toán';
+                                    }
+                                ?>
+                            </td>
+                        </tr>
+                        <?php
+                            }
+                        } ?>
+                    </table>
                 </div>
             </div>
         </div>

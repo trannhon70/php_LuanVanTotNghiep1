@@ -160,7 +160,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['binhluan_submit'])){
                                     while($result_binhluan = $get_binhluan->fetch_assoc()){                   
                             ?>
                                 <div class="show_binhLuan_noidung">
-                                    <div class="show_binhLuan_noidung_ten "><?php echo $result_binhluan['tenbinhluan'] ?> <span>đã bình luận: </span>
+                                    <div class="show_binhLuan_noidung_ten">
+                                        <div class="ten__icon">
+                                            <i class="fa-solid fa-user"></i>
+                                        </div>
+                                        <span><?php echo $result_binhluan['tenbinhluan'] ?></span>
                                     </div>
                                     <div class="show_binhLuan_noidung_chitiet"><?php echo $result_binhluan['binhluan'] ?></div>
                                 </div> <br/>

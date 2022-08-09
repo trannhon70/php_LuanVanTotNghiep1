@@ -55,6 +55,15 @@
                             position: relative;
                             overflow: hidden;
 
+                            h2 {
+                                font-size: 16px !important;
+                                margin: 20px 0 !important;
+                                max-width: 200px;
+                                text-overflow: ellipsis;
+                                overflow: hidden;
+                                white-space: nowrap;
+                            }
+
                             &:hover {
                                 box-shadow: 0 0 5px 10px rgba(84, 52, 52, 0.1);
                                 transform: translateY(-5px);
@@ -199,6 +208,34 @@
                     color: $secondary-color;
                 }
             }
+        }
+    }
+}
+
+.breadcrumbMain {
+
+    .breadcrumbRow {
+        margin: 20px 0;
+        // background-color: #fff;
+        // border-radius: 20px;
+        // padding: 10px 20px;
+        
+        .breadcrumb__link {
+            color: #000;
+            transition: all .3s;
+
+            &.active {
+                color: $secondary-color;
+                font-weight: 500;
+            }
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+
+        span {
+            margin: 0 7px;
         }
     }
 }

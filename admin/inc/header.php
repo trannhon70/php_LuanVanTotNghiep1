@@ -52,11 +52,10 @@
         <div class="grid_12 header-repeat">
             <div id="branding">
                 <div class="floatleft logo">
-                    <img src="img/logo1.jpg" alt="Logo" />
+                    <img src="img/logoMain2.png" alt="Logo" />
 				</div>
 				<div class="floatleft middle">
 					<h1>Trang Admin</h1>
-					<p>kevintran.tk</p>
 				</div>
                 <div class="floatright">
                     <div class="floatleft">

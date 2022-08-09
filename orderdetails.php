@@ -26,13 +26,23 @@ include('inc/header.php');
     }
 </style>
 <form action="" method="post">
-    <div class="main">
-        <div class="content">
-            <div class="section group">
-                <div class="box_left">
-                    <div class="cartpage">
-                        <h2 style="width:100%;">Đơn hàng chi tiết của bạn</h2>
-                        
+    <div class="profile">
+        <div class="container">
+            <div class="row profile__row">
+                <div class="col-12 col-md-12 col-lg-12 profile__breadcrumb">
+                    <a href="index.php" class="breadcrumb__link">Trang chủ</a>
+                    <span>/</span>
+                    <a href="orderTong.php" class="breadcrumb__link">Đơn hàng</a>
+                    <span>/</span>
+                    <a href="orderdetails.php?donhangid=<?php echo $id ?>" class="breadcrumb__link active">Chi tiết đơn hàng</a>
+                </div>
+            </div>
+            <div class="row">
+                <!-- <div class="box_left"> -->
+                    <!-- <div class="col-12 col-md-12 col-lg-12">
+                        <div class="headingMain" style="width:100%;">Đơn hàng chi tiết của bạn</div>
+                    </div> -->
+                    <div class="col-12 col-md-12 col-lg-12">
                         <table class="tblone">
                             <tr>
                                 <th width="5%">STT</th>
@@ -70,9 +80,17 @@ include('inc/header.php');
                                 }
                             } ?>
                         </table>
-                        <div style="padding: 21px 10px;text-align: center;font-size: 20px;">Tổng số tiền cho đơn hàng <span style="color: red;font-weight: 600;"><?php echo $qty ?></span> sản phẩm là : <i style="color: red;font-weight: 600;"><?php echo number_format($subtotal,0,'.',' ') ?> VNĐ</i></div>
                     </div>
-                </div>
+                    <div class="col-12 col-md-12 col-lg-12 moneyCount"> 
+                        <div>
+                            Tổng tiền: 
+                            <i style="color: red;font-weight: 600;">
+                            <span>
+                                <?php echo number_format($subtotal,0,'.',' ') ?> VNĐ</i>
+                            </span>
+                        </div>
+                    </div>
+                <!-- </div> -->
             </div>
         </div>
     </div>

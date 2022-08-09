@@ -156,6 +156,58 @@
                             width: max-content;
                         }
 
+                        .show_binhLuan_noidung {
+
+                            .show_binhLuan_noidung_ten {
+                                display: flex;
+                                align-items: center;
+
+                                .ten__icon {
+                                    background-color: $primary-color;
+                                    width: 40px;
+                                    height: 40px;
+                                    border-radius: 50%;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    margin-right: 10px;
+
+                                    i {
+                                        font-size: 20px;
+                                        color: $secondary-color;
+                                    }
+                                }
+
+                                span {
+                                    font-size: 14px;
+                                    color: $secondary-color;
+                                }
+                            }
+
+                            .show_binhLuan_noidung_chitiet {
+                                background-color: $primary-color;
+                                width: max-content;
+                                max-width: 200px;
+                                border-radius: 10px;
+                                padding: 5px 10px;
+                                font-size: 14px;
+                                margin-top: 15px;
+                                position: relative;
+
+                                &::before {
+                                    content: '';
+                                    position: absolute;
+                                    bottom: 100%;
+                                    left: 10px;
+                                    width: 5px;
+                                    border-width: 10px;
+                                    border-style: solid;
+                                    border-color: transparent transparent $primary-color transparent;
+                                }
+                                // transform: translateX(50px);
+                            }
+                        }
+
                         .binhluan {
 
                             .binhluan_ten {

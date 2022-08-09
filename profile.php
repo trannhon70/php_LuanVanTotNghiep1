@@ -23,12 +23,19 @@ if ($login_check == false) {
 
 <div class="profile">
     <div class="container">
-        <div class="row">
-            <div class="col-12 col-md-12 p-0">
-                <div class="headingMain">Thông tin cá nhân</div>
+        <div class="row profile__row">
+            <div class="col-12 col-md-12 col-lg-12 profile__breadcrumb">
+                <a href="index.php" class="breadcrumb__link">Trang chủ</a>
+                <span>/</span>
+                <a href="profile.php" class="breadcrumb__link active">Profile</a>
             </div>
+        </div>
+        <div class="row">
+            <!-- <div class="col-12 col-md-12 p-0">
+                <div class="headingMain">Thông tin cá nhân</div>
+            </div> -->
 
-            <table class="tblone col-12 col-md-12">
+            <table class="tblone tbProfile col-12 col-md-12">
                 <?php 
                 $id = Session::get('customer_id');
                     $get_customers = $cat->show_customer($id);

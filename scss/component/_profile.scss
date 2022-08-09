@@ -1,8 +1,38 @@
 // Start profile
 .profile {
     background-color: $primary-color;
+    min-height: 350px;
 
     .container {
+
+        .profile__row {
+
+            .profile__breadcrumb{
+                margin: 20px 0;
+                // background-color: #fff;
+                // border-radius: 20px;
+                // padding: 10px 20px;
+                
+                .breadcrumb__link {
+                    color: #000;
+                    transition: all .3s;
+
+                    &.active {
+                        color: $secondary-color;
+                        font-weight: 500;
+                    }
+
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+
+                span {
+                    margin: 0 7px;
+                }
+            }
+
+        }
 
         .row {
 
@@ -10,6 +40,57 @@
                 margin-top: 10px;
                 border-radius: 20px !important;
                 overflow: hidden;
+                border: none;
+
+                tr {
+
+                    &:nth-child(even) {
+                        background-color: #f4c9c463;
+                    }
+
+                    th {
+                        background-color: $secondary-color;
+                        font-size: 16px;
+                    }
+
+                    td {
+                        
+
+                        a {
+                            // transform: translateX(200px);
+                            color: $secondary-color;
+                            transition: all .3s;
+
+                            // &:hover {
+                            //     text-decoration: ;
+                            // }
+                        }
+
+                        input {
+                            border: none;
+                            border-bottom: 1.5px solid $secondary-color;
+                            background-color: transparent;
+                            outline: none;
+                            min-width: 300px;
+                            position: relative;
+                            padding: 5px 10px;
+
+                            &:focus-within {
+                                background-color: $secondary-color;
+                                color: #fff;
+                                border-radius: 20px;
+                                box-sizing: border-box;
+                            }
+                        }
+
+                        // .noCart {
+                        //     width: 100px !important;
+                        // }
+                    }
+                }
+            }
+
+            .tbProfile {
 
                 tr {
 
@@ -22,17 +103,10 @@
                         &:nth-child(2) {
                             width: 2%;
                         }
-
-                        a {
-                            // transform: translateX(200px);
-
-                            &:hover {
-                                text-decoration: none;
-                            }
-                        }
                     }
                 }
             }
+
 
             .profile__submit {
                 display: flex;
@@ -44,6 +118,70 @@
                     &:hover {
                         text-decoration: none;
                     }
+                }
+            }
+
+            .moneyCount {
+                
+                div {
+                    display: flex;
+                    justify-content: flex-end;
+
+                    span {
+                        margin: 0 20px;
+                        color: $secondary-color;
+                    }
+                }
+            }
+
+            .confirmEmail {
+                display: flex;
+                justify-content: center;
+
+                .formConfirmEmail {
+                    background-color: #fff;
+                    border-radius: 20px;
+                    padding: 20px;
+    
+                    input {
+                        border: none;
+                        border-bottom: 1px solid $secondary-color;
+                        outline: none;
+                        width: 400px !important;
+                        margin-bottom: 20px;
+                    }
+
+                    button {
+                        margin-top: 20px;
+                    }
+
+                    // button {
+                    //     margin-top: 20px;
+                    //     border: 1px solid transparent;
+                    //     border-radius: 10px;
+                    // }
+                }
+            }
+
+            .wrapper_method_payment {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-radius: 20px;
+                width: 450px;
+
+                i {
+                    margin-right: 10px;
+                }
+
+                a {
+                    font-size: 14px !important;
+                    // margin: 10px;
+                    // background-color: $secondary-color;
+
+                    // &:hover {
+
+                    // }
                 }
             }
         }

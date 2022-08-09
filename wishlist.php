@@ -14,15 +14,25 @@ include('inc/header.php');
     }
 ?>
 
-<div class="main">
-	<div class="content">
-		<div class="cartoption">
-			<div class="cartpage">
-				<h2 style="width:100%;">Sản phẩm yêu thích</h2>
+<div class="profile">
+	<div class="container">
+		<div class="row profile__row">
+            <div class="col-12 col-md-12 col-lg-12 profile__breadcrumb">
+                <a href="index.php" class="breadcrumb__link">Trang chủ</a>
+                <span>/</span>
+                <a href="profile.php" class="breadcrumb__link active">Sản phẩm yêu thích</a>
+            </div>
+        </div>
+		<div class="row">
+			<div class="col-12 col-md-12 col-lg-12 p-0">
+				
+				<!-- <div class="headingMain">
+					Sản phẩm yêu thích
+				</div> -->
 				
 				<table class="tblone">
 					<tr>
-						<th width="">MSP so sánh</th>
+						<th width="">Mã sản phẩm</th>
 						<th width="">Tên sản phẩm</th>
 						<th width="">Hình ảnh</th>
 						<th width="">Giá</th>
@@ -44,26 +54,35 @@ include('inc/header.php');
 								<td><?php echo number_format($result['price']) . " " . "VNĐ" ?></td>
 
 								<td>
-                                    <a  href="?proid=<?php echo $result['productid'] ?>">Xóa</a> ||
+                                    <a  href="?proid=<?php echo $result['productid'] ?>">Xóa</a> |
                                     <a  href="details.php?proid=<?php echo $result['productid'] ?>">Xem chi tiết</a>
                                 </td>
 							</tr>
 
 					<?php
 						}
-					} ?>
+					} 
+					else {
+						?>
+							<tr>
+								<td colspan="5" style="background-color: #f7f0e8 !important;">
+									<img src="images/not-cart.png" style="width: 300px; height: auto; margin-top: 20px;" class="noCart"/>
+								</td>
+							</tr>
+						<?php 
+						
+						}
+					?>
+					
 
 				</table>
 
 			</div>
-			<div class="shopping">
+			<!-- <div class="shopping">
 				<div class="shopleft">
-				<a class="tieptucMS" href="index.php"> Tiếp tục mua sắm</a>
+					<a class="tieptucMS" href="index.php"> Tiếp tục mua sắm</a>
 				</div>
-				<!-- <div class="shopright">
-					<a href="payment.php"> <img src="images/check.png" alt="" /></a>
-				</div> -->
-			</div>
+			</div> -->
 		</div>
 		<div class="clear"></div>
 	</div>

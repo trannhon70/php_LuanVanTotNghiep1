@@ -292,7 +292,7 @@ a.submit_order:hover {
   
 }
 
-.show_binhLuan_noidung{
+/* .show_binhLuan_noidung{
   background-color: #B3B1B1;
   border-radius: 10px;
   box-shadow: blanchedalmond;
@@ -300,7 +300,7 @@ a.submit_order:hover {
   min-width: 50px;
   display: inline-block;
   margin-bottom: 10px;
-}
+} */
 
 .show_binhLuan_noidung_ten{
   text-transform: uppercase;
